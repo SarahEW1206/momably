@@ -1,32 +1,49 @@
 import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
+import styled from "styled-components";
+
+import SquareCTA from "./SquareCTA";
+import FeaturedProfile from "./FeaturedProfile";
+import FeaturedListings from "./FeaturedListings";
+import Styledh1 from "./styledh1";
+import StyledLink from "./StyledLink";
+
+const Container = styled.div`
+  width: 100%;
+  //   max-width: 1200px;
+  margin: 0 auto;
+`;
+const Marquee = styled.section`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  //   align-items: flex-start; screws with CTA div height!
+  margin-bottom: 20px;
+`;
 
 class Display extends Component {
   render() {
-    const { clients } = this.props;
-    console.log(clients);
+    const { users } = this.props;
+    console.log(users);
 
-    if (clients) {
+    if (users) {
       return (
-        <div>
-          <h1>Featured Listings</h1>
-
-          <div className="container">
-            {clients.map(client => (
-              <div className="card col-xs-12 col-sm-6 col-md-3">
-                <h3>
-                  {client.firstName} {client.lastName}
-                </h3>
-                <h4>{client.email}</h4>
-                <p>${client.balance}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Container>
+          <Marquee>
+            <SquareCTA />
+            <FeaturedProfile />
+          </Marquee>
+          <main>
+            <Styledh1 color="var(--dark-teal)" content="Featured Listings" />
+            <FeaturedListings />
+            <StyledLink to="/signup" content="Sign Up Now!" />
+          </main>
+        </Container>
       );
     } else {
       return null;
@@ -40,8 +57,8 @@ Display.propTypes = {
 };
 
 export default compose(
-  firestoreConnect([{ collection: "clients" }]),
+  firestoreConnect([{ collection: "users" }]),
   connect((state, props) => ({
-    clients: state.firestore.ordered.clients
+    users: state.firestore.ordered.users
   }))
 )(Display);

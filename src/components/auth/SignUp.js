@@ -4,12 +4,16 @@ import { firestoreConnect } from "react-redux-firebase";
 
 class SignUp extends Component {
   state = {
+    bizDesc: "",
+    bizName: "",
+    category: "",
     email: "",
-    password: "",
+    extURL: "",
     firstName: "",
+    imgURL: "",
     lastName: "",
-    phone: "",
-    balance: "0"
+    password: "",
+    phone: ""
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -17,7 +21,18 @@ class SignUp extends Component {
   onCreate = e => {
     e.preventDefault();
     const { firestore, firebase, history } = this.props;
-    const { email, password, lastName, firstName, balance } = this.state;
+    const {
+      bizDesc,
+      bizName,
+      category,
+      email,
+      extURL,
+      firstName,
+      imgURL,
+      lastName,
+      password,
+      phone
+    } = this.state;
 
     firebase
       .auth()
@@ -25,17 +40,25 @@ class SignUp extends Component {
       .then(user => {
         let user_id = user.user.uid;
         firestore
-          .collection("clients")
+          .collection("users")
           .doc(user_id)
           .set({
             user_id: user_id,
+            featured: true,
+            bizDesc:
+              "Lorem ipsum dolor sit amet, ne legere nostro epicurei eum, assentior elaboraret eu est. Noster oportere accusamus sea no, ad ubique causae suscipiantur sit. Ea utinam melius periculis vel. Cu modus impetus appareat mea. Quem inermis ut mea. Qui no simul expetenda, nam ea labore qualisque. Laudem ignota nam an.",
+            bizName,
+            category: "Business Category",
             email,
-            password,
+            extURL: "https://sassafrasbiz.com",
             firstName,
+            imgURL: "https://picsum.photos/200/200",
             lastName,
-            balance
+            password,
+            phone: "111-111-1111"
           })
-          .then(() => history.push(`/client/edit/${user_id}`));
+          .then(() => history.push(`/`));
+        // .then(() => history.push(`/client/edit/${user_id}`));
       })
       .catch(error => alert(error));
   };
@@ -72,6 +95,17 @@ class SignUp extends Component {
                     name="lastName"
                     required
                     value={this.state.lastName}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="bizName">Business Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="bizName"
+                    required
+                    value={this.state.bizName}
                     onChange={this.onChange}
                   />
                 </div>

@@ -1,6 +1,43 @@
-.container {
-  margin-top: 20px;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
+:root {
+  --dark-teal: #00b290;
+  --light-teal: #b1ffee;
+  --light-peach: #ffebcd;
+  --med-peach: #ffb8a0;
+  --dark-peach: #ff7c4d;
+}
+
+body,
+html {
+  background-color: var(--light-teal);
+}
+
+.nav-link {
+  color: var(--dark-teal);
+}
+
+.bg-light {
+  background-color: black !important;
+}
+
+.bg-dark {
+  background-color: var(--dark-peach) !important;
+}
+
+.bg-dark a {
+  color: var(--light-peach) !important;
+}
+
+main {
+  padding: 30px;
+  /* background-color: var(--med-peach); */
+}
+
+.feat-card {
+  border: 5px solid var(--light-teal);
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.feat-card img {
+  width: 100px;
 }

@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../images/logo-ish.png";
 
 export default class TopNav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link to="/" className="navbar-brand">
-          <img
-            src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo3.png"
-            width="130"
-          />
+          <img src={Logo} width="140px" />
         </Link>
         <ul className="nav ml-auto">
           <li className="nav-item">
