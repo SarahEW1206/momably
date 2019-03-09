@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
+// import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
-import Styledh1 from "./styledh1";
+import HeadingOne from "./StyledHeadingOne";
 
 const FeaturedContainer = styled.div`
   padding: 20px;
@@ -44,7 +44,7 @@ class FeaturedProfile extends Component {
 
     return (
       <FeaturedContainer>
-        <Styledh1 content="Featured Profile" />
+        <HeadingOne content="Featured Profile" />
         {users
           .filter(item => item.user_id == "iDX0VulK2xOkRjWlFxYlmQfivc62")
           .map(feature => (

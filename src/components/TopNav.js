@@ -11,6 +11,11 @@ export default class TopNav extends Component {
         </Link>
         <ul className="nav ml-auto">
           <li className="nav-item">
+            <a className="nav-link" href="/about">
+              About Us
+            </a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="/signup">
               Sign Up
             </a>

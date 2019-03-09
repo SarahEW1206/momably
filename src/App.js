@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
 import Display from "./components/Display";
-import NavBar from "./components/NavBar";
 import TopNav from "./components/TopNav";
+import NavBar from "./components/NavBar";
 import SignUp from "./components/auth/SignUp";
 
 class App extends Component {

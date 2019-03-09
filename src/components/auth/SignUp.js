@@ -45,8 +45,7 @@ class SignUp extends Component {
           .set({
             user_id: user_id,
             featured: true,
-            bizDesc:
-              "Lorem ipsum dolor sit amet, ne legere nostro epicurei eum, assentior elaboraret eu est. Noster oportere accusamus sea no, ad ubique causae suscipiantur sit. Ea utinam melius periculis vel. Cu modus impetus appareat mea. Quem inermis ut mea. Qui no simul expetenda, nam ea labore qualisque. Laudem ignota nam an.",
+            bizDesc,
             bizName,
             category: "Business Category",
             email,
@@ -106,6 +105,18 @@ class SignUp extends Component {
                     name="bizName"
                     required
                     value={this.state.bizName}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="bizDesc">Business Description</label>
+                  <textarea
+                    type="text"
+                    className="form-control"
+                    name="bizDesc"
+                    required
+                    value={this.state.bizDesc}
                     onChange={this.onChange}
                   />
                 </div>

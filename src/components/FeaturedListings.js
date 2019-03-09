@@ -15,28 +15,26 @@ const FeaturedListingsSection = styled.section`
   //   align-items: flex-start;
 `;
 
-class FeaturedListings extends Component {
-  render() {
-    const { users } = this.props;
+function FeaturedListings(props) {
+  const { users } = props;
 
-    return (
-      <FeaturedListingsSection>
-        {users
-          .filter(item => item.featured)
-          .map(business => (
-            <div className="feat-card card col-xs-6 col-sm-6 col-md-4 col-lg-3">
-              <h4>{business.bizName}</h4>
-              <img src={business.imgURL} />
-              <h5>
-                {business.firstName} {business.lastName}
-              </h5>
-              <p>{business.email}</p>
-              <p>{business.category}</p>
-            </div>
-          ))}
-      </FeaturedListingsSection>
-    );
-  }
+  return (
+    <FeaturedListingsSection>
+      {users
+        .filter(item => item.featured)
+        .map(business => (
+          <div className="feat-card card col-xs-6 col-sm-6 col-md-4 col-lg-3">
+            <h4>{business.bizName}</h4>
+            <img src={business.imgURL} />
+            <h5>
+              {business.firstName} {business.lastName}
+            </h5>
+            <p>{business.email}</p>
+            <p>{business.category}</p>
+          </div>
+        ))}
+    </FeaturedListingsSection>
+  );
 }
 
 export default compose(

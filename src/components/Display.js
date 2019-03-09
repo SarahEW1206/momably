@@ -9,7 +9,8 @@ import styled from "styled-components";
 import SquareCTA from "./SquareCTA";
 import FeaturedProfile from "./FeaturedProfile";
 import FeaturedListings from "./FeaturedListings";
-import Styledh1 from "./styledh1";
+import HeadingOne from "./StyledHeadingOne";
+import HeadingTwo from "./StyledHeadingTwo";
 import StyledLink from "./StyledLink";
 
 const Container = styled.div`
@@ -39,9 +40,10 @@ class Display extends Component {
             <FeaturedProfile />
           </Marquee>
           <main>
-            <Styledh1 color="var(--dark-teal)" content="Featured Listings" />
+            <HeadingOne color="var(--dark-teal)" content="Featured Listings" />
             <FeaturedListings />
             <StyledLink to="/signup" content="Sign Up Now!" />
+            <HeadingTwo color="#000000" content="This is an H2" />
           </main>
         </Container>
       );

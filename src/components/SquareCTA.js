@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import Styledh1 from "./styledh1";
+import Styledh1 from "./StyledHeadingOne";
 
 const CTABox = styled.div`
   width: 50%;
@@ -17,21 +17,19 @@ const CTABox = styled.div`
   }
 `;
 
-export default class SquareCTA extends Component {
-  render() {
-    return (
-      <CTABox className="ctabox">
-        <Styledh1
-          color="#ffffff"
-          content="Good things happen when Moms Work Together!"
-        />
-        <p>Happy International Women's Day!</p>
-        <h5>
-          Sign up today to do business with other moms who work just as hard as
-          you do.
-        </h5>
-        <button className="btn">Join Us!</button>
-      </CTABox>
-    );
-  }
+export default function SquareCTA() {
+  return (
+    <CTABox className="ctabox">
+      <Styledh1
+        color="#ffffff"
+        content="Good things happen when Moms Work Together!"
+      />
+      <p>Happy International Women's Day!</p>
+      <h5>
+        Sign up today to do business with other moms who work just as hard as
+        you do.
+      </h5>
+      <button className="btn">Join Us!</button>
+    </CTABox>
+  );
 }
