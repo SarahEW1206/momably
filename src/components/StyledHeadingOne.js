@@ -7,6 +7,6 @@ const HeadingOne = styled.h1`
   font-family: "Abril Fatface", cursive;
 `;
 
-export default function StyleHeadingOne(props) {
+export default function StyledHeadingOne(props) {
   return <HeadingOne color={props.color}>{props.content}</HeadingOne>;
 }

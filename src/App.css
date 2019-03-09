@@ -15,6 +15,7 @@ html {
 .main-nav {
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .navbar-nav {
@@ -23,7 +24,6 @@ html {
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
-    /* flex: 1; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +35,16 @@ html {
 
 .nav-link {
   color: var(--dark-teal);
+  font-size: 14px;
+}
+
+.nav-link:active {
+  color: green;
+}
+
+.is-active {
+  padding: 4px;
+  background-color: white;
 }
 
 .nav-link:hover {

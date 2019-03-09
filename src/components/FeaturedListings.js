@@ -5,7 +5,6 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
-// import Styledh1 from "./styledh1";
 
 const FeaturedListingsSection = styled.section`
   display: flex;

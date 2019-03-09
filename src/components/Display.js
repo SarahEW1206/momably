@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { compose } from "redux";
@@ -9,8 +9,8 @@ import styled from "styled-components";
 import SquareCTA from "./SquareCTA";
 import FeaturedProfile from "./FeaturedProfile";
 import FeaturedListings from "./FeaturedListings";
-import HeadingOne from "./StyledHeadingOne";
-import HeadingTwo from "./StyledHeadingTwo";
+import StyledHeadingOne from "./StyledHeadingOne";
+import StyledHeadingTwo from "./StyledHeadingTwo";
 import StyledLink from "./StyledLink";
 
 const Container = styled.div`
@@ -30,7 +30,8 @@ const Marquee = styled.section`
 class Display extends Component {
   render() {
     const { users } = this.props;
-    console.log(users);
+      console.log(users);
+      
 
     if (users) {
       return (
@@ -40,10 +41,13 @@ class Display extends Component {
             <FeaturedProfile />
           </Marquee>
           <main>
-            <HeadingOne color="var(--dark-teal)" content="Featured Listings" />
+            <StyledHeadingOne
+              color="var(--dark-teal)"
+              content="Featured Listings"
+            />
             <FeaturedListings />
             <StyledLink to="/signup" content="Sign Up Now!" />
-            <HeadingTwo color="#000000" content="This is an H2" />
+            <StyledHeadingTwo color="#000000" content="This is an H2" />
           </main>
         </Container>
       );

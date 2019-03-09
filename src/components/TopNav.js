@@ -1,24 +1,40 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../images/logo-ish.png";
 
-export default class TopNav extends Component {
+class TopNav extends Component {
   render() {
+    // const aboutClass = location.pathname.match(/^\/about/)
+    //   ? "active nav-item"
+    //   : "nav-item";
+    // const signupClass = location.pathname.match(/^\/signup/)
+    //   ? "active nav-item"
+    //   : "nav-item";
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/" className="navbar-brand">
+        <NavLink to="/" className="navbar-brand">
           <img src={Logo} width="140px" />
-        </Link>
+        </NavLink>
         <ul className="nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/about">
+            <NavLink
+              exact={true}
+              activeClassName="is-active"
+              className="nav-link"
+              to="/about"
+            >
               About Us
-            </a>
+            </NavLink>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/signup">
+          <li className="nav-item signupClass">
+            <NavLink
+              exact={true}
+              activeClassName="is-active"
+              className="nav-link"
+              to="/signup"
+            >
               Sign Up
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
@@ -35,3 +51,5 @@ export default class TopNav extends Component {
     );
   }
 }
+
+export default withRouter(TopNav);
