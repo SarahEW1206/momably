@@ -13,7 +13,7 @@ class TopNav extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink to="/" className="navbar-brand">
-          <img src={Logo} width="140px" />
+          <img src={Logo} width="140px" alt="moms work together logo" />
         </NavLink>
         <ul className="nav ml-auto">
           <li className="nav-item">
@@ -37,12 +37,12 @@ class TopNav extends Component {
             </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="/">
               Log In
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="/">
               <i className="fas fa-user-circle" />
             </a>
           </li>

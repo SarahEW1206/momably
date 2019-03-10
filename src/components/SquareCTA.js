@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Styledh1 from "./StyledHeadingOne";
@@ -43,13 +43,14 @@ export default function SquareCTA() {
           color="#ffffff"
           content="Good things happen when Moms Work Together!"
         />
-        <div className="highlighted">
+        {/* <div className="highlighted">
           <p>Happy International Women's Day!</p>
-        </div>
+        </div> */}
         <h5>
           Sign up today to do business with other moms who work just as hard as
           you do.
         </h5>
+        <br />
         <button className="btn">Join Us!</button>
       </div>
     </CTABox>

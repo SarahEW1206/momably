@@ -3,14 +3,14 @@ import React from "react";
 export default function NavBar() {
   return (
     <nav className="main-nav navbar navbar-expand-lg navbar-dark bg-dark">
-      {/* <a className="navbar-brand" href="#">
+      {/* <a className="navbar-brand" href="/">
           Navbar
         </a> */}
       <button
         className="navbar-toggler ml-auto"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
+        data-target="/navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup"
         aria-expanded="false"
         aria-label="Toggle navigation"
@@ -31,19 +31,19 @@ export default function NavBar() {
           <a className="nav-item nav-link" href="/">
             Hair & Beauty
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/">
             Health & Fitness
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/">
             Home & Living
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/">
             Kids & Baby
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/">
             Pets
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/">
             Professional Services
           </a>
         </div>

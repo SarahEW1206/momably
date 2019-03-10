@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
 // import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
-import { compose } from "redux";
-import { connect } from "react-redux";
-import { firestoreConnect } from "react-redux-firebase";
+// import { compose } from "redux";
+// import { connect } from "react-redux";
+// import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 import StyledHeadingOne from "./StyledHeadingOne";
 
@@ -50,10 +50,10 @@ class FeaturedProfile extends Component {
         <div className="inner-cont">
           <StyledHeadingOne content="Featured Profile" />
           {users
-            .filter(item => item.user_id == "iDX0VulK2xOkRjWlFxYlmQfivc62")
+            .filter(item => item.user_id === "iDX0VulK2xOkRjWlFxYlmQfivc62")
             .map(feature => (
-              <Fragment>
-                <img src={feature.imgURL} />
+              <Fragment key={feature.user_id}>
+                <img src={feature.imgURL} alt={feature.bizName} />
                 <div>
                   <h2>{feature.bizName}</h2>
                   <h3>
@@ -69,9 +69,11 @@ class FeaturedProfile extends Component {
   }
 }
 
-export default compose(
-  firestoreConnect([{ collection: "users" }]),
-  connect((state, props) => ({
-    users: state.firestore.ordered.users
-  }))
-)(FeaturedProfile);
+// export default compose(
+//   firestoreConnect([{ collection: "users" }]),
+//   connect((state, props) => ({
+//     users: state.firestore.ordered.users
+//   }))
+// )(FeaturedProfile);
+
+export default FeaturedProfile;

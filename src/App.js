@@ -11,8 +11,6 @@ import SignUp from "./components/auth/SignUp";
 
 class App extends Component {
   render() {
-    console.log(this);
-
     return (
       <Provider store={store}>
         <Router>

@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
-import { compose } from "redux";
-import { connect } from "react-redux";
-import { firestoreConnect } from "react-redux-firebase";
+// import { compose } from "redux";
+// import { connect } from "react-redux";
+// import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 
 const FeaturedListingsSection = styled.section`
@@ -22,9 +22,12 @@ function FeaturedListings(props) {
       {users
         .filter(item => item.featured)
         .map(business => (
-          <div className="feat-card card col-xs-6 col-sm-6 col-md-4 col-lg-3">
+          <div
+            key={business.user_id}
+            className="feat-card card col-xs-6 col-sm-6 col-md-4 col-lg-3"
+          >
             <h4>{business.bizName}</h4>
-            <img src={business.imgURL} />
+            <img src={business.imgURL} alt={business.bizName} />
             <h5>
               {business.firstName} {business.lastName}
             </h5>
@@ -36,9 +39,11 @@ function FeaturedListings(props) {
   );
 }
 
-export default compose(
-  firestoreConnect([{ collection: "clients" }]),
-  connect((state, props) => ({
-    users: state.firestore.ordered.users
-  }))
-)(FeaturedListings);
+// export default compose(
+//   firestoreConnect([{ collection: "clients" }]),
+//   connect((state, props) => ({
+//     users: state.firestore.ordered.users
+//   }))
+// )(FeaturedListings);
+
+export default FeaturedListings;

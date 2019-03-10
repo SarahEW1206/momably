@@ -30,22 +30,21 @@ const Marquee = styled.section`
 class Display extends Component {
   render() {
     const { users } = this.props;
-      console.log(users);
-      
+    console.log(users);
 
     if (users) {
       return (
         <Container>
           <Marquee>
             <SquareCTA />
-            <FeaturedProfile />
+            <FeaturedProfile users={users} />
           </Marquee>
           <main>
             <StyledHeadingOne
               color="var(--dark-teal)"
               content="Featured Listings"
             />
-            <FeaturedListings />
+            <FeaturedListings users={users} />
             <StyledLink to="/signup" content="Sign Up Now!" />
             <StyledHeadingTwo color="#000000" content="This is an H2" />
           </main>
