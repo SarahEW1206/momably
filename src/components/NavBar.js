@@ -10,7 +10,7 @@ export default function NavBar() {
         className="navbar-toggler ml-auto"
         type="button"
         data-toggle="collapse"
-        data-target="/navbarNavAltMarkup"
+        data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup"
         aria-expanded="false"
         aria-label="Toggle navigation"

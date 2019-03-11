@@ -57,6 +57,14 @@ const FeatProfTopRow = styled.div`
       margin-right: 0px;
     }
   }
+
+  @media (min-width: 1250px) {
+    flex-direction: row;
+
+    img {
+      margin-right: 20px;
+    }
+  }
 `;
 
 class FeaturedProfile extends Component {

@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 import SquareCTA from "./SquareCTA";
 import FeaturedProfile from "./FeaturedProfile";
+import BrowseByCategory from "./BrowseByCategory";
 import FeaturedListings from "./FeaturedListings";
 import StyledHeadingOne from "./StyledHeadingOne";
 import StyledHeadingTwo from "./StyledHeadingTwo";
@@ -27,7 +28,7 @@ const Marquee = styled.section`
   margin-bottom: 20px;
 `;
 
-class Display extends Component {
+class HomePage extends Component {
   render() {
     const { users } = this.props;
     console.log(users);
@@ -42,11 +43,16 @@ class Display extends Component {
           <main>
             <StyledHeadingOne
               color="var(--dark-teal)"
+              content="Browse By Category"
+            />
+            <BrowseByCategory users={users} />
+            <StyledHeadingOne
+              color="var(--dark-teal)"
               content="Featured Listings"
             />
             <FeaturedListings users={users} />
-            <StyledLink to="/signup" content="Sign Up Now!" />
-            <StyledHeadingTwo color="#000000" content="This is an H2" />
+            {/* <StyledLink to="/signup" content="Sign Up Now!" />
+            <StyledHeadingTwo color="#000000" content="This is an H2" /> */}
           </main>
         </Container>
       );
@@ -56,9 +62,8 @@ class Display extends Component {
   }
 }
 
-Display.propTypes = {
-  firestore: PropTypes.object.isRequired,
-  clients: PropTypes.array
+HomePage.propTypes = {
+  firestore: PropTypes.object.isRequired
 };
 
 export default compose(
@@ -66,4 +71,4 @@ export default compose(
   connect((state, props) => ({
     users: state.firestore.ordered.users
   }))
-)(Display);
+)(HomePage);
