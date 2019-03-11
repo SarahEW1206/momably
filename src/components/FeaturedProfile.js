@@ -6,36 +6,55 @@ import React, { Component, Fragment } from "react";
 // import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 import StyledHeadingOne from "./StyledHeadingOne";
+import StyledHeadingTwo from "./StyledHeadingTwo";
 
 const FeaturedContainer = styled.div`
   background-color: #ffebcd;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
+  width: 50%;
 
   .inner-cont {
     padding: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+`;
+
+const FeatProfTopRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 100%;
+
+  i {
+    font-size: 16px;
   }
 
   img {
-    margin: 20px 0;
+    margin-bottom: 20px;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 650px) {
     flex-direction: row;
+
     img {
-      margin: 0 20px;
+      margin-right: 20px;
     }
   }
 
-  @media (min-width: 1200px) {
-    flex: 1;
-    width: 50%;
+  @media (min-width: 900px) {
     flex-direction: column;
+
     img {
-      margin: 20px 0;
+      margin-right: 0px;
     }
   }
 `;
@@ -53,14 +72,29 @@ class FeaturedProfile extends Component {
             .filter(item => item.user_id === "iDX0VulK2xOkRjWlFxYlmQfivc62")
             .map(feature => (
               <Fragment key={feature.user_id}>
-                <img src={feature.imgURL} alt={feature.bizName} />
-                <div>
-                  <h2>{feature.bizName}</h2>
-                  <h3>
-                    {feature.firstName} {feature.lastName}
-                  </h3>
-                  <p>{feature.bizDesc}</p>
-                </div>
+                <FeatProfTopRow>
+                  <img src={feature.imgURL} alt={feature.bizName} />
+                  <div>
+                    <StyledHeadingTwo content={feature.bizName} color="#333" />
+                    <p>
+                      Rating:
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                      <i className="fas fa-star" />
+                    </p>
+                    <p>{feature.bizDesc}</p>
+                    <p>
+                      <strong>Owner: </strong>
+                      {feature.firstName} {feature.lastName}
+                    </p>
+                    <p>
+                      <strong>Category: </strong>
+                      {feature.category}
+                    </p>
+                  </div>
+                </FeatProfTopRow>
               </Fragment>
             ))}
         </div>

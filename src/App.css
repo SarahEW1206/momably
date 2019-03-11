@@ -10,6 +10,7 @@ body,
 html {
   background-color: var(--light-teal);
   transition: all 0.4s ease;
+  color: #333;
 }
 
 .nav {
@@ -40,8 +41,8 @@ html {
 .nav-link {
   color: var(--dark-teal);
   font-size: 14px;
-  padding: 0.4rem 0rem;
-  margin: 0.8rem;
+  padding: 0.2rem 0rem;
+  margin: 0 0.8rem;
 }
 
 .nav-link i {
@@ -58,7 +59,7 @@ html {
 }
 
 .bg-light {
-  background-color: black !important;
+  background-color: #fff !important;
 }
 
 .bg-dark {
@@ -66,7 +67,8 @@ html {
 }
 
 .bg-dark .nav-link {
-  color: var(--light-peach) !important;
+  color: #fff !important;
+  font-weight: 500;
 }
 
 .bg-dark .nav-link:hover {

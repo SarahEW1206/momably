@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import Logo from "../images/logo-ish.png";
+import Logo from "../images/momably.png";
 
 class TopNav extends Component {
   render() {

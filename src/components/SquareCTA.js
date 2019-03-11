@@ -16,7 +16,7 @@ const CTABox = styled.div`
   div {
     padding: 100px;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 900px) {
     width: 100%;
   }
 
