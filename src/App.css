@@ -12,10 +12,21 @@ html {
   transition: all 0.4s ease;
   color: #333;
   line-height: 1.3;
+  font-family: Muli, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Abril Fatface", Georgia, "Times New Roman", Times, serif;
 }
 
 .nav {
   align-items: center;
+}
+
+.header-logo {
+  margin-left: 20px;
 }
 
 /* .main-nav {
@@ -38,7 +49,7 @@ html {
     align-items: center;
     text-align: left;
     line-height: 1;
-    font-size: 0.8em;
+    font-size: 16px;
     width: 180px;
     padding: 10px 0px;
   }
@@ -46,8 +57,8 @@ html {
 
 .nav-link {
   color: var(--dark-teal);
-  font-size: 14px;
-  padding: 0.2rem 0rem;
+  font-size: 16px;
+  padding: 0.5rem 0rem;
   margin: 0 0.8rem;
 }
 

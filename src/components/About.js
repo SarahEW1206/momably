@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import { Link } from "react-router-dom";
 import StyledHeadingOne from "./StyledHeadingOne";
+import StyledHeadingTwo from "./StyledHeadingTwo";
 
 const AboutContainer = styled.main`
   width: 100%;
@@ -48,8 +49,56 @@ const StatsSection = styled.section`
 
 const Stats = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap:
+  flex-direction: column;
   justify-content: space-around;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
+`;
+
+const Stat = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1
+  background-color: var(--dark-teal);
+  border-top: 2px solid var(--med-peach);
+  border-bottom: 2px solid var(--med-peach);
+  border-left: 1px solid var(--med-peach);
+  border-right: 1px solid var(--med-peach);
+  padding: 70px 0;
+  
+`;
+
+const VisionBox = styled.div`
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--dark-peach);
+  padding: 60px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+`;
+
+const StoryBox = styled.div`
+  width: 50%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 60px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export default function About() {
@@ -58,39 +107,47 @@ export default function About() {
       <picture>
         <source
           media="(min-width: 1200px)"
-          srcSet="https://via.placeholder.com/2000x650/"
+          srcSet="https://picsum.photos/2000/650?random"
         />
         <source
           media="(min-width: 600px)"
-          srcSet="https://via.placeholder.com/1200x600/"
+          srcSet="https://picsum.photos/1200/600?random"
         />
-        <img
-          src="https://via.placeholder.com/600/"
-          alt="about mwt main image"
-        />
+        <img src="https://picsum.photos/600?random" alt="about momably" />
       </picture>
       <WhySection>
         <StyledHeadingOne content="Moms know how hard other moms work." />
         <WhyDescription>
-          Moms Work Together is a marketplace where mothers who run businesses
-          can sell to (and buy from or hire) other moms. With this kind of
-          mutual support of one another's business ventures, moms can focus less
-          on tracking down new clients and customers, and more on things that
-          matter, like spending quality time with the ones they work so hard
-          for.
+          Momably is a marketplace where mothers who run businesses can sell to
+          (and buy from or hire) other moms. With this kind of mutual support of
+          one another's business ventures, moms can focus less on tracking down
+          new clients and customers, and more on things that matter, like
+          spending quality time with the ones they work so hard for.
         </WhyDescription>
       </WhySection>
       <StatsSection>
-        <StyledHeadingOne
+        {/* <StyledHeadingOne
           color="000000"
           content="stats section of some sort..."
-        />
+        /> */}
         <Stats>
-          <div className="col-xs-12 col-s-4">STAT 1</div>
-          <div className="col-xs-12 col-s-4">STAT 1</div>
-          <div className="col-xs-12 col-s-4">STAT 1</div>
+          <Stat className="col-xs-12 col-s-4">
+            <h1>20%</h1>
+          </Stat>
+          <Stat className="col-xs-12 col-s-4">
+            <h1>6 Years</h1>
+          </Stat>
+          <Stat className="col-xs-12 col-s-4">
+            <h1>1 in 10</h1>
+          </Stat>
         </Stats>
       </StatsSection>
+      <VisionBox>
+        <StyledHeadingTwo content="Vision" color="white" />
+      </VisionBox>
+      <StoryBox>
+        <StyledHeadingTwo content="Story" color="var(--dark-peach)" />
+      </StoryBox>
     </AboutContainer>
   );
 }

@@ -13,7 +13,12 @@ class TopNav extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink to="/" className="navbar-brand">
-          <img src={Logo} width="140px" alt="moms work together logo" />
+          <img
+            className="header-logo"
+            src={Logo}
+            width="140px"
+            alt="moms work together logo"
+          />
         </NavLink>
         <ul className="nav ml-auto">
           <li className="nav-item">
