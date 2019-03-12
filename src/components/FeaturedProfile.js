@@ -10,7 +10,7 @@ import StyledHeadingTwo from "./StyledHeadingTwo";
 
 const FeaturedContainer = styled.div`
   background-color: #ffebcd;
-  width: 50%;
+  width: 40%;
 
   .inner-cont {
     padding: 60px;
@@ -58,11 +58,11 @@ const FeatProfTopRow = styled.div`
     }
   }
 
-  @media (min-width: 1250px) {
+  @media (min-width: 1400px) {
     flex-direction: row;
 
     img {
-      margin-right: 20px;
+      margin-right: 50px;
     }
   }
 `;
