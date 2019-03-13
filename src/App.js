@@ -8,6 +8,7 @@ import About from "./components/About";
 import TopNav from "./components/TopNav";
 import NavBar from "./components/NavBar";
 import SignUp from "./components/auth/SignUp";
+import LogIn from "./components/auth/LogIn";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/about" component={About} />
               <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/login" component={LogIn} />
             </Switch>
           </div>
         </Router>

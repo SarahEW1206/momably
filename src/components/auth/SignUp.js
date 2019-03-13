@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
+import styled from "styled-components";
+
+const FormContainer = styled.div`
+  width: 95%;
+  max-width: 900px;
+  margin: 50px auto;
+`;
 
 class SignUp extends Component {
   //Keeping this all here for now, but will likely split data between signup and account detail screens.
@@ -62,7 +69,7 @@ class SignUp extends Component {
             password,
             phone: "111-111-1111"
           })
-          //For no, go back to homepage after.  Later - should go to account page to fill in more detail.
+          //For now, go back to homepage after.  Later - should go to account page to fill in more detail.
           .then(() => history.push(`/`));
         // .then(() => history.push(`/client/edit/${user_id}`));
       })
@@ -71,18 +78,11 @@ class SignUp extends Component {
 
   render() {
     return (
-      //   <div className="row">
-      //     <div className="col-md-6 mx-auto">
-      //       <div className="card">
-      <div className="card-body">
-        <h1 className="text-center pb-4 pt-3">
-          <span className="text-primary">
-            <i className="fas fa-lock" /> CREATE ACCOUNT
-          </span>
-        </h1>
+      <FormContainer>
+        <h1>Create Account</h1>
         <form onSubmit={this.onCreate}>
           <div className="form-group">
-            <label htmlFor="firstName">First</label>
+            <label htmlFor="firstName">First Name</label>
             <input
               type="text"
               className="form-control"
@@ -94,7 +94,7 @@ class SignUp extends Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="lastName">Last</label>
+            <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
               className="form-control"
@@ -158,10 +158,7 @@ class SignUp extends Component {
             className="btn btn-primary btn-block"
           />
         </form>
-      </div>
-      //       </div>
-      //     </div>
-      //   </div>
+      </FormContainer>
     );
   }
 }
