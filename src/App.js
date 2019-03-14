@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
-import Marketplace from "./components/Marketplace";
+import Marketplace from "./components/marketplace/Marketplace";
 import Home from "./components/Home";
-import TopNav from "./components/TopNav";
-import NavBar from "./components/NavBar";
+import TopNav from "./components/nav/TopNav";
+import NavBar from "./components/nav/NavBar";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
-import EditAccount from "./components/EditAccount";
+import EditAccount from "./components/user/EditAccount";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import StyledLink from "./StyledLink";
+import StyledLink from "../elements/StyledLink";
 
 export default function BrowseByCategory(props) {
   const CategoryList = styled.ul`

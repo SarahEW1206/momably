@@ -5,8 +5,8 @@ import React, { Component, Fragment } from "react";
 // import { connect } from "react-redux";
 // import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
-import StyledHeadingOne from "./StyledHeadingOne";
-import StyledHeadingTwo from "./StyledHeadingTwo";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
+import StyledHeadingTwo from "../elements/StyledHeadingTwo";
 
 const FeaturedContainer = styled.div`
   background-color: #ffebcd;

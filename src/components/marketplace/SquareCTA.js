@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Styledh1 from "./StyledHeadingOne";
+import Styledh1 from "../elements/StyledHeadingOne";
 
 const CTABox = styled.div`
   width: 60%;

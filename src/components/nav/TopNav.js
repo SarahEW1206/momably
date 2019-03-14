@@ -3,7 +3,7 @@ import { Link, NavLink, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firebaseConnect } from "react-redux-firebase";
-import Logo from "../images/momably.png";
+import Logo from "../../images/momably.png";
 
 class TopNav extends Component {
   onLogOutClick = e => {

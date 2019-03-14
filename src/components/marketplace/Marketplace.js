@@ -10,9 +10,9 @@ import SquareCTA from "./SquareCTA";
 import FeaturedProfile from "./FeaturedProfile";
 import BrowseByCategory from "./BrowseByCategory";
 import FeaturedListings from "./FeaturedListings";
-import StyledHeadingOne from "./StyledHeadingOne";
-import StyledHeadingTwo from "./StyledHeadingTwo";
-import StyledLink from "./StyledLink";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
+import StyledHeadingTwo from "../elements/StyledHeadingTwo";
+import StyledLink from "../elements/StyledLink";
 
 const Container = styled.div`
   width: 100%;

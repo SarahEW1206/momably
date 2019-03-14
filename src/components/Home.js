@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 // import { Link } from "react-router-dom";
-import StyledHeadingOne from "./StyledHeadingOne";
-import StyledHeadingTwo from "./StyledHeadingTwo";
+import StyledHeadingOne from "./elements/StyledHeadingOne";
+import StyledHeadingTwo from "./elements/StyledHeadingTwo";
 
 const AboutContainer = styled.main`
   width: 100%;

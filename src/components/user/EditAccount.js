@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 
 import styled from "styled-components";
-import StyledHeadingOne from "./StyledHeadingOne";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
 
 const EditFormContainer = styled.div`
   width: 100%;
