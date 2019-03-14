@@ -23,20 +23,6 @@ const CTABox = styled.div`
       padding: 50px;
     }
   }
-
-  //   div.highlighted {
-  //     max-width: 350px;
-  //     padding: 0;
-  //     background-color: rgba(255, 255, 255, 0.6);
-  //     margin-top: 30px;
-
-  //     p {
-  //       position: relative;
-  //       top: -10px;
-  //       font-weight: bold;
-  //       line-height: 1;
-  //     }
-  //   }
 `;
 
 export default function SquareCTA() {
@@ -69,8 +55,6 @@ export default function SquareCTA() {
           Sign up today to do business with other moms who work just as hard as
           you do.
         </h5>
-        <br />
-        <button className="btn">Join Us!</button>
       </div>
     </CTABox>
   );

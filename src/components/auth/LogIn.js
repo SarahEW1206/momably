@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 const FormContainer = styled.div`
   width: 95%;
-  max-width: 900px;
+  height: 70vh;
+  max-width: 300px;
   margin: 50px auto;
 `;
 
@@ -25,17 +26,18 @@ class SignUp extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(user => {
-        console.log(firebase.auth());
-        history.push(`/edit/${user.user.uid}`);
-      })
-      // .then(() => history.push(`/client/edit/${user_id}`));
+      .then(history.push("/marketplace"))
+      // history.push(`/edit/${user.user.uid}`);
+
       .catch(error => alert(error));
   };
 
   render() {
     return (
       <FormContainer>
+        <p style={{ color: "red" }}>
+          <em>Figure out how to hide password on login.</em>
+        </p>
         <h1>Log In</h1>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

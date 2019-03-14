@@ -5,6 +5,28 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 
+import styled from "styled-components";
+import StyledHeadingOne from "./StyledHeadingOne";
+
+const EditFormContainer = styled.div`
+  width: 100%;
+  height: 80vh;
+  padding: 0;
+`;
+
+const EditForm = styled.main`
+  width: 95%;
+  max-width: 900px;
+  margin: 50px auto;
+
+  form {
+    margin-top: 30px;
+  }
+  input {
+    width: 100%;
+  }
+`;
+
 class EditAccount extends Component {
   state = {
     firstName: "",
@@ -13,7 +35,7 @@ class EditAccount extends Component {
     phone: ""
   };
 
-  //method from Will's comments in the chat thread.
+  //To input current as value and make it editable.
   componentDidUpdate() {
     const { user } = this.props;
     //the if statement needs to be there to make sure you don't keep updating state, you'll get errors otherwise. That should let it run only the once, and once the user is loaded.
@@ -56,90 +78,88 @@ class EditAccount extends Component {
 
     if (user) {
       return (
-        <div>
-          <div className="row">
+        <EditFormContainer>
+          {/* <div className="row">
             <div className="col-md-6">
               <Link to="/" className="btn btn-link">
                 <i className="fas fa-arrow-circle-left" />
                 Return to Dashboard
               </Link>
             </div>
-          </div>
-          <div className="card">
-            <div className="card-header">Edit user</div>
-            <div className="card-body">
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <label htmlFor="firstName" className="htmlFor">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="firstName"
-                    minLength="2"
-                    onChange={this.onChange}
-                    placeholder={user.firstName}
-                    value={firstName}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="lastName" className="htmlFor">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="lastName"
-                    minLength="2"
-                    onChange={this.onChange}
-                    placeholder={user.lastName}
-                    value={lastName}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email" className="htmlFor">
-                    Email
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="email"
-                    minLength="2"
-                    // required
-                    onChange={this.onChange}
-                    placeholder={user.email}
-                    value={email}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="phone" className="htmlFor">
-                    Phone
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="phone"
-                    minLength="10"
-                    // required
-                    onChange={this.onChange}
-                    placeholder={user.phone}
-                    value={phone}
-                  />
-                </div>
-
+          </div> */}
+          <EditForm>
+            <StyledHeadingOne content="Edit Your Account Info" color="#333" />
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <label htmlFor="firstName" className="htmlFor">
+                  First Name
+                </label>
                 <input
-                  type="submit"
-                  value="Submit"
-                  className="btn btn-primary btn-block"
+                  type="text"
+                  className="form-control"
+                  name="firstName"
+                  minLength="2"
+                  onChange={this.onChange}
+                  placeholder={user.firstName}
+                  value={firstName}
                 />
-              </form>
-            </div>
-          </div>
-        </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="lastName" className="htmlFor">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="lastName"
+                  minLength="2"
+                  onChange={this.onChange}
+                  placeholder={user.lastName}
+                  value={lastName}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email" className="htmlFor">
+                  Email
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="email"
+                  minLength="2"
+                  // required
+                  onChange={this.onChange}
+                  placeholder={user.email}
+                  value={email}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="phone" className="htmlFor">
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="phone"
+                  minLength="10"
+                  // required
+                  onChange={this.onChange}
+                  placeholder={user.phone}
+                  value={phone}
+                />
+              </div>
+
+              <input
+                type="submit"
+                value="Submit"
+                className="btn btn-primary btn-block"
+              />
+            </form>
+          </EditForm>
+        </EditFormContainer>
       );
     } else {
       return <p>Waiting...</p>;

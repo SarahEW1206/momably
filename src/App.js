@@ -11,6 +11,7 @@ import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import EditAccount from "./components/EditAccount";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
               <Route exact path="/edit/:id" component={EditAccount} />
               <Route exact path="/contact" component={Contact} />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </Provider>

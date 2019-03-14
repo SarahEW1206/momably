@@ -35,7 +35,7 @@ const WhySection = styled.section`
   flex-direction: row;
   padding: 100px;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
 
   @media (max-width: 900px) {
     padding: 40px;
@@ -148,6 +148,7 @@ export default function Home() {
           new clients and customers, and more on things that matter, like
           spending quality time with the ones they work so hard for.
         </WhyDescription>
+        <button className="btn">Join Us!</button>
       </WhySection>
       <StatsSection>
         {/* <StyledHeadingOne

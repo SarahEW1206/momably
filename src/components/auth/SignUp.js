@@ -77,7 +77,16 @@ class SignUp extends Component {
   render() {
     return (
       <FormContainer>
+        <p style={{ color: "red" }}>
+          <em>Some text here reiterating value prop....</em>
+        </p>
         <h1>Create Account</h1>
+        <p style={{ color: "red" }}>
+          <em>
+            Make this a full signup form with all info including selector for
+            category, etc.
+          </em>
+        </p>
         <form onSubmit={this.onCreate}>
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
