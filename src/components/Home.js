@@ -13,6 +13,20 @@ const AboutContainer = styled.main`
     width: 100%;
   }
 `;
+
+const Top = styled.div`
+  position: relative;
+  h1 {
+    position: absolute;
+    top: 100px;
+    left: 20%;
+    color: white;
+    font-size: 3rem;
+    line-height: 2.4rem;
+    width: 300px;
+  }
+`;
+
 const WhySection = styled.section`
   width: 95%;
   max-width: 1200px;
@@ -21,7 +35,7 @@ const WhySection = styled.section`
   flex-direction: row;
   padding: 100px;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
 
   @media (max-width: 900px) {
     padding: 40px;
@@ -73,8 +87,14 @@ const Stat = styled.div`
   
 `;
 
+const BottomRow = styled.section`
+  display: flex;
+  flex-flow: row wrap;
+`;
+
 const VisionBox = styled.div`
-  width: 100%;
+  width: 50%;
+  height: 400px;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -89,6 +109,7 @@ const VisionBox = styled.div`
 
 const StoryBox = styled.div`
   width: 50%;
+  height: 400px;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -101,22 +122,25 @@ const StoryBox = styled.div`
   }
 `;
 
-export default function About() {
+export default function Home() {
   return (
     <AboutContainer>
-      <picture>
-        <source
-          media="(min-width: 1200px)"
-          srcSet="https://picsum.photos/2000/650?random"
-        />
-        <source
-          media="(min-width: 600px)"
-          srcSet="https://picsum.photos/1200/600?random"
-        />
-        <img src="https://picsum.photos/600?random" alt="about momably" />
-      </picture>
+      <Top>
+        <picture>
+          <source
+            media="(min-width: 1000px)"
+            srcSet="https://picsum.photos/2000/650?random"
+          />
+          <source
+            media="(min-width: 600px)"
+            srcSet="https://picsum.photos/1200/600?random"
+          />
+          <img src="https://picsum.photos/500?random" alt="about momably" />
+        </picture>
+        <h1>Moms know how hard other moms work.</h1>
+      </Top>
       <WhySection>
-        <StyledHeadingOne content="Moms know how hard other moms work." />
+        {/* <StyledHeadingOne content="Moms know how hard other moms work." /> */}
         <WhyDescription>
           Momably is a marketplace where mothers who run businesses can sell to
           (and buy from or hire) other moms. With this kind of mutual support of
@@ -142,12 +166,18 @@ export default function About() {
           </Stat>
         </Stats>
       </StatsSection>
-      <VisionBox>
-        <StyledHeadingTwo content="Vision" color="white" />
-      </VisionBox>
-      <StoryBox>
-        <StyledHeadingTwo content="Story" color="var(--dark-peach)" />
-      </StoryBox>
+      <BottomRow>
+        <VisionBox>
+          <StyledHeadingTwo content="Vision" color="white" />
+          <p>
+            Our vision is empower mothers to grow their businesses while
+            supporting other mothers trying to do the same.
+          </p>
+        </VisionBox>
+        <StoryBox>
+          <StyledHeadingTwo content="Story" color="var(--dark-peach)" />
+        </StoryBox>
+      </BottomRow>
     </AboutContainer>
   );
 }

@@ -28,10 +28,9 @@ const Marquee = styled.section`
   margin-bottom: 20px;
 `;
 
-class HomePage extends Component {
+class Marketplace extends Component {
   render() {
     const { users } = this.props;
-    console.log(users);
 
     if (users) {
       return (
@@ -62,7 +61,7 @@ class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {
+Marketplace.propTypes = {
   firestore: PropTypes.object.isRequired
 };
 
@@ -71,4 +70,4 @@ export default compose(
   connect((state, props) => ({
     users: state.firestore.ordered.users
   }))
-)(HomePage);
+)(Marketplace);

@@ -69,9 +69,7 @@ class SignUp extends Component {
             password,
             phone: "111-111-1111"
           })
-          //For now, go back to homepage after.  Later - should go to account page to fill in more detail.
-          .then(() => history.push(`/`));
-        // .then(() => history.push(`/client/edit/${user_id}`));
+          .then(() => history.push(`/edit/${user_id}`));
       })
       .catch(error => alert(error));
   };

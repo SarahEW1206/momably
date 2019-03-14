@@ -70,7 +70,6 @@ const FeatProfTopRow = styled.div`
 class FeaturedProfile extends Component {
   render() {
     const { users } = this.props;
-    console.log(users);
 
     return (
       <FeaturedContainer>

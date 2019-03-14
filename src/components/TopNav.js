@@ -28,56 +28,53 @@ class TopNav extends Component {
             alt="momably logo"
           />
         </NavLink>
-        <ul className="nav ml-auto">
-          <li className="nav-item">
+
+        {auth.uid ? (
+          <ul className="nav ml-auto">
             <NavLink
               exact={true}
               activeClassName="is-active"
               className="nav-link"
-              to="/about"
+              to="/marketplace"
             >
-              About Us
+              Marketplace
             </NavLink>
-          </li>
-          <li className="nav-item signupClass">
             <NavLink
               exact={true}
               activeClassName="is-active"
               className="nav-link"
-              to="/signup"
+              to={`/edit/${auth.uid}`}
             >
-              Sign Up
+              My Profile
             </NavLink>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              <i className="fas fa-user-circle" />
-            </a>
-          </li>
-          {/* <li className="nav-item">
-          <NavLink
-              exact={true}
-              activeClassName="is-active"
-              className="nav-link"
-              to="/login"
-            >
-              Log In
-            </NavLink>
-          </li> */}
-          {auth.uid ? (
-            <li className="nav-item">
-              <a href="#!" className="nav-link">
-                {auth.email}
-              </a>
-            </li>
-          ) : null}
-          {auth.uid ? (
             <li className="nav-item">
               <a href="#!" className="nav-link" onClick={this.onLogOutClick}>
                 Log Out
               </a>
             </li>
-          ) : (
+          </ul>
+        ) : (
+          <ul className="nav ml-auto">
+            <li className="nav-item">
+              <NavLink
+                exact={true}
+                activeClassName="is-active"
+                className="nav-link"
+                to="/"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item signupClass">
+              <NavLink
+                exact={true}
+                activeClassName="is-active"
+                className="nav-link"
+                to="/signup"
+              >
+                Join Us
+              </NavLink>
+            </li>
             <NavLink
               exact={true}
               activeClassName="is-active"
@@ -85,10 +82,23 @@ class TopNav extends Component {
               to="/login"
             >
               Log In
+            </NavLink>{" "}
+            <NavLink
+              exact={true}
+              activeClassName="is-active"
+              className="nav-link"
+              to="/contact"
+            >
+              Contact
             </NavLink>
-          )}
-        </ul>
+          </ul>
+        )}
       </nav>
+      //   <li className="nav-item">
+      //   <a className="nav-link" href="/">
+      //     <i className="fas fa-user-circle" />
+      //   </a>
+      // </li>
     );
   }
 }

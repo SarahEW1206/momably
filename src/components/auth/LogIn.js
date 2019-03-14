@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 
-// const FormContainer = styled.div`
-//   width: 95%;
-//   max-width: 900px;
-//   margin: 50px auto;
-// `;
+const FormContainer = styled.div`
+  width: 95%;
+  max-width: 900px;
+  margin: 50px auto;
+`;
 
 class SignUp extends Component {
   state = {
@@ -26,8 +26,8 @@ class SignUp extends Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(user => {
-        console.log(user);
-        history.push("/");
+        console.log(firebase.auth());
+        history.push(`/edit/${user.user.uid}`);
       })
       // .then(() => history.push(`/client/edit/${user_id}`));
       .catch(error => alert(error));
@@ -35,7 +35,7 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div>
+      <FormContainer>
         <h1>Log In</h1>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
@@ -68,7 +68,7 @@ class SignUp extends Component {
             className="btn btn-primary btn-block"
           />
         </form>
-      </div>
+      </FormContainer>
     );
   }
 }

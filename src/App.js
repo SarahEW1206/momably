@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
-import HomePage from "./components/HomePage";
-import About from "./components/About";
+import Marketplace from "./components/Marketplace";
+import Home from "./components/Home";
 import TopNav from "./components/TopNav";
 import NavBar from "./components/NavBar";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
+import EditAccount from "./components/EditAccount";
+import Contact from "./components/Contact";
 
 class App extends Component {
   render() {
@@ -19,10 +21,12 @@ class App extends Component {
             <TopNav />
             <NavBar />
             <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/about" component={About} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/marketplace" component={Marketplace} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/login" component={LogIn} />
+              <Route exact path="/edit/:id" component={EditAccount} />
+              <Route exact path="/contact" component={Contact} />
             </Switch>
           </div>
         </Router>
