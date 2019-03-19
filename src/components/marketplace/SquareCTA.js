@@ -4,17 +4,33 @@ import styled from "styled-components";
 import Styledh1 from "../elements/StyledHeadingOne";
 
 const CTABox = styled.div`
-  width: 60%;
+  width: 30%;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   background-color: #00b290;
   color: var(--light-peach);
 
   div {
     padding: 100px;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    font-size: 4rem;
+    color: white;
+    width: 300px;
+    animation: fadein 5s;
   }
 
   @media (max-width: 900px) {
@@ -29,32 +45,12 @@ export default function SquareCTA() {
   return (
     <CTABox className="ctabox">
       <div>
-        <Styledh1
+        {/* <Styledh1
+          className="fade-in"
           color="#ffffff"
-          content="Good things happen when moms work together!"
-        />
-        {/* <div className="highlighted">
-          <p>Happy International Women's Day!</p>
-        </div> */}
-        <h5>Momably is:</h5>
-        <ul>
-          <li>
-            A marketplace made up of moms who are business owners, freelancers,
-            entrepreneurs, side hustlers, etc.
-          </li>
-          <li>
-            A place to sell your products and services to others who appreciate
-            how hard you work, because they are moms too.
-          </li>
-          <li>
-            A place to support other moms by buying what they are selling.
-          </li>
-          <li>A supportive community.</li>
-        </ul>
-        <h5>
-          Sign up today to do business with other moms who work just as hard as
-          you do.
-        </h5>
+          content="Things I've Made!"
+        /> */}
+        <h1 className="fade-in">Things I've Made!</h1>
       </div>
     </CTABox>
   );

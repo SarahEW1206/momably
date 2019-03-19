@@ -22,6 +22,11 @@ h3 {
   font-family: var(--abril-font);
 }
 
+a,
+a:hover {
+  text-decoration: none;
+}
+
 .nav {
   align-items: center;
 }

@@ -24,7 +24,7 @@ function FeaturedListings(props) {
         .map(business => (
           <div
             key={business.user_id}
-            className="feat-card card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2"
+            className="feat-card card col-12 col-sm-6 col-md-4 col-lg-3"
           >
             <h4>{business.bizName}</h4>
             <img src={business.imgURL} alt={business.bizName} />

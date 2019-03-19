@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.div`
-  height: 100px;
+  height: 200px;
   width: 100%;
   background-color: var(--light-peach);
   text-align: center;

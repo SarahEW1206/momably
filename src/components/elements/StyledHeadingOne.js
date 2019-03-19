@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeadingOne = styled.h1`
-  font-size: 2em;
+  font-size: 3em;
   color: ${props => props.color || "#ff7c4d"};
   font-family: "Abril Fatface", cursive;
 `;

@@ -16,6 +16,11 @@ const AboutContainer = styled.main`
 
 const Top = styled.div`
   position: relative;
+  background-image: url("https://picsum.photos/2000/1000?random");
+  background-size: cover;
+  width 100%;
+  height: 500px;
+
   h1 {
     position: absolute;
     top: 100px;
@@ -24,6 +29,12 @@ const Top = styled.div`
     font-size: 3rem;
     line-height: 2.4rem;
     width: 300px;
+  }
+
+  @media (max-width: 500px) {
+    h1 {
+      left: 20px;
+    }
   }
 `;
 
@@ -54,7 +65,7 @@ const WhyDescription = styled.p`
 `;
 
 const StatsSection = styled.section`
-  background-color: var(--light-peach);
+  // background-color: var(--light-peach);
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -78,7 +89,7 @@ const Stat = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1
-  background-color: var(--dark-teal);
+  background-color: #fff;
   border-top: 2px solid var(--med-peach);
   border-bottom: 2px solid var(--med-peach);
   border-left: 1px solid var(--med-peach);
@@ -114,7 +125,7 @@ const StoryBox = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #ffffff;
+  background-color: var(--dark-teal);
   padding: 60px;
 
   @media (max-width: 600px) {
@@ -126,7 +137,7 @@ export default function Home() {
   return (
     <AboutContainer>
       <Top>
-        <picture>
+        {/* <picture>
           <source
             media="(min-width: 1000px)"
             srcSet="https://picsum.photos/2000/650?random"
@@ -136,7 +147,7 @@ export default function Home() {
             srcSet="https://picsum.photos/1200/600?random"
           />
           <img src="https://picsum.photos/500?random" alt="about momably" />
-        </picture>
+        </picture> */}
         <h1>Moms know how hard other moms work.</h1>
       </Top>
       <WhySection>

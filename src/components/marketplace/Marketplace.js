@@ -11,13 +11,17 @@ import FeaturedProfile from "./FeaturedProfile";
 import BrowseByCategory from "./BrowseByCategory";
 import FeaturedListings from "./FeaturedListings";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
-import StyledHeadingTwo from "../elements/StyledHeadingTwo";
-import StyledLink from "../elements/StyledLink";
+// import StyledHeadingTwo from "../elements/StyledHeadingTwo";
+// import StyledLink from "../elements/StyledLink";
 
 const Container = styled.div`
   width: 100%;
   //   max-width: 1200px;
   margin: 0 auto;
+
+  main {
+    padding: 30px;
+  }
 `;
 const Marquee = styled.section`
   display: flex;
@@ -26,6 +30,7 @@ const Marquee = styled.section`
   justify-content: flex-start;
   //   align-items: flex-start; screws with CTA div height!
   margin-bottom: 20px;
+  background-color: var(--dark-teal);
 `;
 
 class Marketplace extends Component {
@@ -40,16 +45,17 @@ class Marketplace extends Component {
             <FeaturedProfile users={users} />
           </Marquee>
           <main>
-            <StyledHeadingOne
+            {/* <StyledHeadingOne
               color="var(--dark-teal)"
               content="Browse By Category"
-            />
-            <BrowseByCategory users={users} />
+            /> */}
+            {/* <BrowseByCategory users={users} /> */}
             <StyledHeadingOne
               color="var(--dark-teal)"
-              content="Featured Listings"
+              content="Selected Projects"
             />
             <FeaturedListings users={users} />
+
             {/* <StyledLink to="/signup" content="Sign Up Now!" />
             <StyledHeadingTwo color="#000000" content="This is an H2" /> */}
           </main>

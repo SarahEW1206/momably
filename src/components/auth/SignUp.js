@@ -3,14 +3,40 @@ import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 
-const FormContainer = styled.div`
+const SignUpContainer = styled.div`
+  width: 100%;
+  padding: 0;
+  margin-bottom: 100px;
+
+  img {
+    width: 100%;
+  }
+`;
+
+const SignUpImage = styled.div`
+background-image: url("https://picsum.photos/2000/1000?random");
+background-size: cover;
+width 100%;
+height: 500px;
+`;
+
+const SignUpForm = styled.form`
   width: 95%;
-  max-width: 900px;
+  max-width: 800px;
   margin: 50px auto;
+  border: 1px solid var(--dark-teal);
+  padding: 20px;
+  margin-top: -200px;
+  background-color: white;
+  position: relative;
+  z-index: 1000;
+
+  input {
+    width: 100%;
+  }
 `;
 
 class SignUp extends Component {
-  //Keeping this all here for now, but will likely split data between signup and account detail screens.
   state = {
     bizDesc: "",
     bizName: "",
@@ -76,96 +102,107 @@ class SignUp extends Component {
 
   render() {
     return (
-      <FormContainer>
-        <p style={{ color: "red" }}>
-          <em>Some text here reiterating value prop....</em>
-        </p>
-        <h1>Create Account</h1>
-        <p style={{ color: "red" }}>
-          <em>
-            Make this a full signup form with all info including selector for
-            category, etc.
-          </em>
-        </p>
-        <form onSubmit={this.onCreate}>
-          <div className="form-group">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              type="text"
-              className="form-control"
-              name="firstName"
-              required
-              value={this.state.firstName}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              type="text"
-              className="form-control"
-              name="lastName"
-              required
-              value={this.state.lastName}
-              onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="bizName">Business Name</label>
-            <input
-              type="text"
-              className="form-control"
-              name="bizName"
-              required
-              value={this.state.bizName}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="bizDesc">Business Description</label>
-            <textarea
-              type="text"
-              className="form-control"
-              name="bizDesc"
-              required
-              value={this.state.bizDesc}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              required
-              value={this.state.email}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              className="form-control"
-              name="password"
-              required
-              value={this.state.password}
-              onChange={this.onChange}
-            />
-          </div>
-
-          <input
-            type="submit"
-            value="CREATE"
-            className="btn btn-primary btn-block"
+      <SignUpContainer>
+        <SignUpImage />
+        {/* <picture>
+          <source
+            media="(min-width: 1000px)"
+            srcSet="https://picsum.photos/2000/400?random"
           />
-        </form>
-      </FormContainer>
+          <source
+            media="(min-width: 500px)"
+            srcSet="https://picsum.photos/800/500?random"
+          />
+          <img src="https://picsum.photos/400?random" alt="about momably" />
+        </picture> */}
+        <SignUpForm>
+          <h1>Create Account</h1>
+          <p style={{ color: "red" }}>
+            <em>
+              Make this a full signup form with all info including selector for
+              category, etc.
+            </em>
+          </p>
+          <form onSubmit={this.onCreate}>
+            <div className="form-group">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="firstName"
+                required
+                value={this.state.firstName}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="lastName"
+                required
+                value={this.state.lastName}
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="bizName">Business Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="bizName"
+                required
+                value={this.state.bizName}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="bizDesc">Business Description</label>
+              <textarea
+                type="text"
+                className="form-control"
+                name="bizDesc"
+                required
+                value={this.state.bizDesc}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                required
+                value={this.state.email}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="text"
+                className="form-control"
+                name="password"
+                required
+                value={this.state.password}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <input
+              type="submit"
+              value="CREATE"
+              className="btn btn-primary btn-block"
+            />
+          </form>
+        </SignUpForm>
+      </SignUpContainer>
     );
   }
 }

@@ -4,16 +4,32 @@ import React, { Component, Fragment } from "react";
 // import { compose } from "redux";
 // import { connect } from "react-redux";
 // import { firestoreConnect } from "react-redux-firebase";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
 import StyledHeadingTwo from "../elements/StyledHeadingTwo";
 
+const slideIn = keyframes`
+  from {
+    transform: translateX(700px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;
+
 const FeaturedContainer = styled.div`
   background-color: #ffebcd;
-  width: 40%;
+  width: 70%;
+  transform: translateX(700px);
+  animation: ${slideIn} 3s linear forwards;
+  animation-delay: 1s;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
 
   .inner-cont {
-    padding: 60px;
+    margin-left: 60px;
+    padding: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -23,6 +39,16 @@ const FeaturedContainer = styled.div`
 
   @media (max-width: 900px) {
     width: 100%;
+    animation: none;
+    transform: translateX(0px);
+
+    -webkit-clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0% 100%);
+
+    .inner-cont {
+      margin-left: 0px;
+      padding: 120px 40px;
+    }
   }
 `;
 
@@ -74,7 +100,7 @@ class FeaturedProfile extends Component {
     return (
       <FeaturedContainer>
         <div className="inner-cont">
-          <StyledHeadingOne content="Featured Profile" />
+          <StyledHeadingOne content="Featured Project" />
           {users
             .filter(item => item.user_id === "iDX0VulK2xOkRjWlFxYlmQfivc62")
             .map(feature => (
