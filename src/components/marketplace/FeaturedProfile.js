@@ -11,25 +11,26 @@ import StyledHeadingTwo from "../elements/StyledHeadingTwo";
 const slideIn = keyframes`
   from {
     transform: translateX(700px);
+    opacity: 0;
   }
 
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 `;
 
 const FeaturedContainer = styled.div`
   background-color: #ffebcd;
-  width: 70%;
+  width: 65%;
   transform: translateX(700px);
-  animation: ${slideIn} 3s linear forwards;
-  animation-delay: 1s;
+  opacity: 0;
+  animation: ${slideIn} 1s linear forwards;
   -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
 
   .inner-cont {
-    margin-left: 60px;
-    padding: 100px;
+    padding: 100px 170px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -37,10 +38,11 @@ const FeaturedContainer = styled.div`
     align-items: flex-start;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1150px) {
     width: 100%;
     animation: none;
     transform: translateX(0px);
+    opacity: 1;
 
     -webkit-clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0% 100%);
     clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0% 100%);
@@ -76,7 +78,7 @@ const FeatProfTopRow = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1150px) {
     flex-direction: column;
 
     img {
@@ -100,7 +102,7 @@ class FeaturedProfile extends Component {
     return (
       <FeaturedContainer>
         <div className="inner-cont">
-          <StyledHeadingOne content="Featured Project" />
+          <StyledHeadingOne content="Featured Member" />
           {users
             .filter(item => item.user_id === "iDX0VulK2xOkRjWlFxYlmQfivc62")
             .map(feature => (

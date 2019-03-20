@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { connect } from "react-redux";
@@ -18,8 +18,10 @@ class TopNav extends Component {
       props: { auth }
     } = this;
 
+    console.log(auth);
+
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="top-nav navbar navbar-expand-lg navbar-light bg-light">
         <NavLink to="/" className="navbar-brand">
           <img
             className="header-logo"
@@ -30,29 +32,55 @@ class TopNav extends Component {
         </NavLink>
 
         {auth.uid ? (
-          <ul className="nav ml-auto">
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              className="nav-link"
-              to="/marketplace"
-            >
-              Marketplace
-            </NavLink>
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              className="nav-link"
-              to={`/edit/${auth.uid}`}
-            >
-              My Profile
-            </NavLink>
-            <li className="nav-item">
-              <a href="#!" className="nav-link" onClick={this.onLogOutClick}>
-                Log Out
-              </a>
-            </li>
-          </ul>
+          <Fragment>
+            <ul className="nav ml-auto">
+              <li className="nav-item">
+                <NavLink
+                  exact={true}
+                  activeClassName="is-active"
+                  className="nav-link"
+                  to="/"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact={true}
+                  activeClassName="is-active"
+                  className="nav-link"
+                  to="/marketplace"
+                >
+                  Marketplace
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact={true}
+                  activeClassName="is-active"
+                  className="nav-link"
+                  to={`/edit/${auth.uid}`}
+                >
+                  My Profile
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <a href="#!" className="nav-link" onClick={this.onLogOutClick}>
+                  Log Out
+                </a>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact={true}
+                  activeClassName="is-active"
+                  className="nav-link"
+                  to="/contact"
+                >
+                  Contact
+                </NavLink>
+              </li>
+            </ul>
+          </Fragment>
         ) : (
           <ul className="nav ml-auto">
             <li className="nav-item">
@@ -65,6 +93,16 @@ class TopNav extends Component {
                 Home
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                exact={true}
+                activeClassName="is-active"
+                className="nav-link"
+                to="/marketplace"
+              >
+                Marketplace
+              </NavLink>
+            </li>
             <li className="nav-item signupClass">
               <NavLink
                 exact={true}
@@ -75,22 +113,26 @@ class TopNav extends Component {
                 Join Us
               </NavLink>
             </li>
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              className="nav-link"
-              to="/login"
-            >
-              Log In
-            </NavLink>{" "}
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              className="nav-link"
-              to="/contact"
-            >
-              Contact
-            </NavLink>
+            <li className="nav-item">
+              <NavLink
+                exact={true}
+                activeClassName="is-active"
+                className="nav-link"
+                to="/login"
+              >
+                Log In
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact={true}
+                activeClassName="is-active"
+                className="nav-link"
+                to="/contact"
+              >
+                Contact
+              </NavLink>
+            </li>
           </ul>
         )}
       </nav>

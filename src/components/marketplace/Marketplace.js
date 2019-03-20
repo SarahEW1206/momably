@@ -4,20 +4,36 @@ import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import SquareCTA from "./SquareCTA";
 import FeaturedProfile from "./FeaturedProfile";
 import BrowseByCategory from "./BrowseByCategory";
 import FeaturedListings from "./FeaturedListings";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
+import NavBar from "../nav/NavBar";
 // import StyledHeadingTwo from "../elements/StyledHeadingTwo";
 // import StyledLink from "../elements/StyledLink";
 
+const pageFade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+`;
 const Container = styled.div`
   width: 100%;
   //   max-width: 1200px;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(0);
+  animation: ${pageFade} 1s linear forwards;
 
   main {
     padding: 30px;
@@ -29,7 +45,7 @@ const Marquee = styled.section`
   flex-wrap: wrap;
   justify-content: flex-start;
   //   align-items: flex-start; screws with CTA div height!
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   background-color: var(--dark-teal);
 `;
 
@@ -44,6 +60,7 @@ class Marketplace extends Component {
             <SquareCTA />
             <FeaturedProfile users={users} />
           </Marquee>
+          <NavBar />
           <main>
             {/* <StyledHeadingOne
               color="var(--dark-teal)"
@@ -52,8 +69,16 @@ class Marketplace extends Component {
             {/* <BrowseByCategory users={users} /> */}
             <StyledHeadingOne
               color="var(--dark-teal)"
-              content="Selected Projects"
+              content="Browse by Category"
             />
+            <p>Showing: All</p>
+            <p style={{ color: "red" }}>
+              <em>
+                Add category dropdown with filter function (same function as
+                clicking on orange menu; add sort by: A-Z, etc.)
+              </em>
+            </p>
+
             <FeaturedListings users={users} />
 
             {/* <StyledLink to="/signup" content="Sign Up Now!" />
@@ -62,7 +87,7 @@ class Marketplace extends Component {
         </Container>
       );
     } else {
-      return null;
+      return <div style={{ height: "100vh" }} />;
     }
   }
 }

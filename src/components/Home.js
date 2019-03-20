@@ -1,13 +1,39 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 // import { Link } from "react-router-dom";
 import StyledHeadingOne from "./elements/StyledHeadingOne";
 import StyledHeadingTwo from "./elements/StyledHeadingTwo";
+
+const pageFade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+`;
+
+const dropIn = keyframes`
+from {
+  top: -500px
+}
+to {
+  top: 100px
+}
+
+`;
 
 const AboutContainer = styled.main`
   width: 100%;
   margin: 0;
   padding: 0;
+  opacity: 0;
+  transform: translateX(0);
+  animation: ${pageFade} 2s linear forwards;
 
   img {
     width: 100%;
@@ -18,17 +44,20 @@ const Top = styled.div`
   position: relative;
   background-image: url("https://picsum.photos/2000/1000?random");
   background-size: cover;
+  background-color: purple;
   width 100%;
   height: 500px;
 
   h1 {
     position: absolute;
-    top: 100px;
+    top: -500px;
     left: 20%;
     color: white;
     font-size: 3rem;
     line-height: 2.4rem;
     width: 300px;
+    animation-delay: 10s;
+    animation: ${dropIn} 4s ease-in-out forwards;
   }
 
   @media (max-width: 500px) {
@@ -89,6 +118,7 @@ const Stat = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1
+  height: 400px;
   background-color: #fff;
   border-top: 2px solid var(--med-peach);
   border-bottom: 2px solid var(--med-peach);
@@ -96,6 +126,9 @@ const Stat = styled.div`
   border-right: 1px solid var(--med-peach);
   padding: 70px 0;
   
+  p {
+    text-align: center;
+  }
 `;
 
 const BottomRow = styled.section`
@@ -116,6 +149,11 @@ const VisionBox = styled.div`
   @media (max-width: 600px) {
     width: 100%;
   }
+
+  p {
+    padding: 20px;
+    background-color: white;
+  }
 `;
 
 const StoryBox = styled.div`
@@ -130,6 +168,10 @@ const StoryBox = styled.div`
 
   @media (max-width: 600px) {
     width: 100%;
+  }
+  p {
+    padding: 20px;
+    background-color: white;
   }
 `;
 
@@ -168,26 +210,43 @@ export default function Home() {
         /> */}
         <Stats>
           <Stat className="col-xs-12 col-s-4">
-            <h1>20%</h1>
+            <h1>5 Years</h1>
+            <p>Average Number of Years in Business</p>
           </Stat>
           <Stat className="col-xs-12 col-s-4">
-            <h1>6 Years</h1>
+            <h1>52 Hours</h1>
+            <p>Average Number of Hours Spent Working Per Week</p>
           </Stat>
           <Stat className="col-xs-12 col-s-4">
-            <h1>1 in 10</h1>
+            <h1>70%</h1>
+            <p>Started their business after having a child.</p>
           </Stat>
         </Stats>
+        <h4>See more data about the moms of Momably!</h4>
       </StatsSection>
       <BottomRow>
         <VisionBox>
           <StyledHeadingTwo content="Vision" color="white" />
           <p>
-            Our vision is empower mothers to grow their businesses while
-            supporting other mothers trying to do the same.
+            Our vision is empower mothers to help one another to be successful
+            in their business ventures.
           </p>
         </VisionBox>
         <StoryBox>
-          <StyledHeadingTwo content="Story" color="var(--dark-peach)" />
+          <StyledHeadingTwo content="Story" color="white" />
+          <p>
+            Momably was created by me,{" "}
+            <a className="link-highlight" href="/">
+              Sarah Waldie
+            </a>
+            , a freelance web developer who shifted careers and began learning
+            to code in 2016 while pregnant with my son. I found that I was most
+            passionate about opportunities to provide services to other moms. I
+            appreciated their support and always sought to pay it forward by
+            hiring moms whenever possible. In Momably, I want to create a
+            community that makes it easy for moms (and others!) to hire moms and
+            support this powerful and motivated group of businesspeople.
+          </p>
         </StoryBox>
       </BottomRow>
     </AboutContainer>
