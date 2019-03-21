@@ -80,7 +80,10 @@ class Marketplace extends Component {
               color="var(--dark-teal)"
               content="Browse by Category"
             />
-            <p>Showing: All</p>
+            <p>
+              Category:{" "}
+              {this.state.clickedItem ? this.state.clickedItem : "All"}
+            </p>
             <p style={{ color: "red" }}>
               <em>
                 Add category dropdown with filter function (same function as

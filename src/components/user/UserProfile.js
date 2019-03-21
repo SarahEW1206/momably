@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 
 import styled from "styled-components";
-import StyledHeadingOne from "../elements/StyledHeadingOne";
+// import StyledHeadingOne from "../elements/StyledHeadingOne";
 
 const ProfileContainer = styled.div`
   width: 100%;
@@ -26,7 +26,7 @@ const ProfileInnerCont = styled.div`
   max-width: 800px;
   margin: 50px auto;
   border: 1px solid var(--dark-teal);
-  padding: 20px;
+  padding: 50px;
   margin-top: -200px;
   background-color: white;
   position: relative;
@@ -34,9 +34,8 @@ const ProfileInnerCont = styled.div`
 
   img {
     width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto;
+    max-width: 200px;
+    margin: 20px 0;
   }
 `;
 
