@@ -50,6 +50,15 @@ const Marquee = styled.section`
 `;
 
 class Marketplace extends Component {
+  state = {
+    clickedItem: ""
+  };
+
+  onClick = e => {
+    console.log(e.target.value);
+    this.setState({ clickedItem: e.target.value });
+  };
+
   render() {
     const { users } = this.props;
 
@@ -60,7 +69,7 @@ class Marketplace extends Component {
             <SquareCTA />
             <FeaturedProfile users={users} />
           </Marquee>
-          <NavBar />
+          <NavBar onClick={this.onClick} />
           <main>
             {/* <StyledHeadingOne
               color="var(--dark-teal)"
@@ -75,11 +84,12 @@ class Marketplace extends Component {
             <p style={{ color: "red" }}>
               <em>
                 Add category dropdown with filter function (same function as
-                clicking on orange menu; add sort by: A-Z, etc.)
+                clicking on orange menu; add sort by: A-Z, etc.) Also a view
+                toggler maybe? Switch between list and grid?
               </em>
             </p>
 
-            <FeaturedListings users={users} />
+            <FeaturedListings users={users} selected={this.state.clickedItem} />
 
             {/* <StyledLink to="/signup" content="Sign Up Now!" />
             <StyledHeadingTwo color="#000000" content="This is an H2" /> */}

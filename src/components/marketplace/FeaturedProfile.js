@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
 // import { compose } from "redux";
 // import { connect } from "react-redux";
@@ -128,6 +128,7 @@ class FeaturedProfile extends Component {
                       <strong>Category: </strong>
                       {feature.category}
                     </p>
+                    <Link to={`/profile/${feature.user_id}`}>View Profile</Link>
                   </div>
                 </FeatProfTopRow>
               </Fragment>

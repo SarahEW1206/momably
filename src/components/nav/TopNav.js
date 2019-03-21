@@ -61,7 +61,17 @@ class TopNav extends Component {
                   className="nav-link"
                   to={`/edit/${auth.uid}`}
                 >
-                  My Profile
+                  Edit Profile
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact={true}
+                  activeClassName="is-active"
+                  className="nav-link"
+                  to={`/profile/${auth.uid}`}
+                >
+                  View Profile
                 </NavLink>
               </li>
               <li className="nav-item">

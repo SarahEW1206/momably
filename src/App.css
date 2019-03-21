@@ -38,13 +38,13 @@ a:hover {
 .main-nav {
   position: sticky;
   top: 60px;
-  z-index: 100;
+  z-index: 2000;
 }
 
 .top-nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 2000;
 }
 
 .navbar-nav {
@@ -77,9 +77,19 @@ a:hover {
   margin: 0 0.8rem;
 }
 
-.nav-link i {
-  font-size: 35px;
+.category-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
+
+.category-button:focus {
+  outline: none;
+}
+
+/* .nav-link i {
+  font-size: 35px;
+} */
 
 .is-active {
   color: var(--dark-peach);
@@ -139,6 +149,7 @@ button.btn:hover {
 }
 
 .link-highlight {
+  padding: 2px;
   color: var(--dark-teal);
   box-shadow: inset 0 -3px 0 -1px var(--med-peach);
   transition: box-shadow 0.15s ease-in-out;
@@ -146,5 +157,5 @@ button.btn:hover {
 
 .link-highlight:hover {
   color: var(--dark-teal);
-  box-shadow: inset 0 -23px 0 -1px var(--med-peach);
+  box-shadow: inset 0 -25px 0 -1px var(--med-peach);
 }

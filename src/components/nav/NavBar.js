@@ -6,13 +6,8 @@ import { firebaseConnect } from "react-redux-firebase";
 
 class NavBar extends Component {
   render() {
-    const {
-      props: { auth }
-    } = this;
-
     return (
       <Fragment>
-        {/* {auth.uid ? ( */}
         <nav className="main-nav navbar navbar-expand-lg navbar-dark bg-dark">
           <button
             className="navbar-toggler ml-auto"
@@ -27,37 +22,72 @@ class NavBar extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-item nav-link" href="/">
+              <button
+                className="category-button nav-link"
+                value="Art & Photography"
+                onClick={this.props.onClick}
+              >
                 Art & Photography
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Clothing & Accessories"
+                onClick={this.props.onClick}
+              >
                 Clothing & Accessories
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Entertainment"
+                onClick={this.props.onClick}
+              >
                 Entertainment
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Hair & Beauty"
+                onClick={this.props.onClick}
+              >
                 Hair & Beauty
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Health & Fitness"
+                onClick={this.props.onClick}
+              >
                 Health & Fitness
-              </a>
-              <a className="nav-item nav-link" href="/">
-                Home & Living
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Kids & Baby"
+                onClick={this.props.onClick}
+              >
                 Kids & Baby
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Household"
+                onClick={this.props.onClick}
+              >
+                Household
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Pets"
+                onClick={this.props.onClick}
+              >
                 Pets
-              </a>
-              <a className="nav-item nav-link" href="/">
+              </button>
+              <button
+                className="category-button nav-link"
+                value="Professional Services"
+                onClick={this.props.onClick}
+              >
                 Professional Services
-              </a>
+              </button>
             </div>
           </div>
         </nav>
-        {/* ) : null} */}
       </Fragment>
     );
   }
