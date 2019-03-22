@@ -6,7 +6,6 @@ import "./App.css";
 import Marketplace from "./components/marketplace/Marketplace";
 import Home from "./components/Home";
 import TopNav from "./components/nav/TopNav";
-import NavBar from "./components/nav/NavBar";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import EditAccount from "./components/user/EditAccount";

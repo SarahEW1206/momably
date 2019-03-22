@@ -32,6 +32,14 @@ class SignUp extends Component {
       .catch(error => alert(error));
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentWillUnmount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <FormContainer>

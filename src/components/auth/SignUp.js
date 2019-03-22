@@ -17,7 +17,7 @@ const SignUpImage = styled.div`
 background-image: url("https://picsum.photos/2000/1000?random");
 background-size: cover;
 width 100%;
-height: 500px;
+height: 300px;
 `;
 
 const SignUpForm = styled.form`
@@ -100,21 +100,18 @@ class SignUp extends Component {
       .catch(error => alert(error));
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentWillUnmount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <SignUpContainer>
         <SignUpImage />
-        {/* <picture>
-          <source
-            media="(min-width: 1000px)"
-            srcSet="https://picsum.photos/2000/400?random"
-          />
-          <source
-            media="(min-width: 500px)"
-            srcSet="https://picsum.photos/800/500?random"
-          />
-          <img src="https://picsum.photos/400?random" alt="about momably" />
-        </picture> */}
         <SignUpForm>
           <h1>Create Account</h1>
           <p style={{ color: "red" }}>

@@ -59,6 +59,14 @@ class Marketplace extends Component {
     this.setState({ clickedItem: e.target.value });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentWillUnmount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { users } = this.props;
 

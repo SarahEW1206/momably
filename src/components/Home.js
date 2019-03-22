@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 // import { Link } from "react-router-dom";
 import StyledHeadingOne from "./elements/StyledHeadingOne";
@@ -175,80 +175,83 @@ const StoryBox = styled.div`
   }
 `;
 
-export default function Home() {
-  return (
-    <AboutContainer>
-      <Top>
-        {/* <picture>
-          <source
-            media="(min-width: 1000px)"
-            srcSet="https://picsum.photos/2000/650?random"
-          />
-          <source
-            media="(min-width: 600px)"
-            srcSet="https://picsum.photos/1200/600?random"
-          />
-          <img src="https://picsum.photos/500?random" alt="about momably" />
-        </picture> */}
-        <h1>Moms know how hard other moms work.</h1>
-      </Top>
-      <WhySection>
-        {/* <StyledHeadingOne content="Moms know how hard other moms work." /> */}
-        <WhyDescription>
-          Momably is a marketplace where mothers who run businesses can sell to
-          (and buy from or hire) other moms. With this kind of mutual support of
-          one another's business ventures, moms can focus less on tracking down
-          new clients and customers, and more on things that matter, like
-          spending quality time with the ones they work so hard for.
-        </WhyDescription>
-        <button className="btn">Join Us!</button>
-      </WhySection>
-      <StatsSection>
-        {/* <StyledHeadingOne
+class Home extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentWillUnmount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <AboutContainer>
+        <Top>
+          <h1>Moms know how hard other moms work.</h1>
+        </Top>
+        <WhySection>
+          <StyledHeadingTwo content="A rising tide lifts all boats." />
+          <WhyDescription>
+            Momably is a marketplace where mothers who run businesses can sell
+            to (and buy from or hire) other moms. With this kind of mutual
+            support of one another's business ventures, moms can focus less on
+            tracking down new clients and customers, and more on things that
+            matter, like spending quality time with the ones they work so hard
+            for.
+          </WhyDescription>
+          <button className="btn">Join Us!</button>
+        </WhySection>
+        <StatsSection>
+          {/* <StyledHeadingOne
           color="000000"
           content="stats section of some sort..."
         /> */}
-        <Stats>
-          <Stat className="col-xs-12 col-s-4">
-            <h1>5 Years</h1>
-            <p>Average Number of Years in Business</p>
-          </Stat>
-          <Stat className="col-xs-12 col-s-4">
-            <h1>52 Hours</h1>
-            <p>Average Number of Hours Spent Working Per Week</p>
-          </Stat>
-          <Stat className="col-xs-12 col-s-4">
-            <h1>70%</h1>
-            <p>Started their business after having a child.</p>
-          </Stat>
-        </Stats>
-        <h4>See more data about the moms of Momably!</h4>
-      </StatsSection>
-      <BottomRow>
-        <VisionBox>
-          <StyledHeadingTwo content="Vision" color="white" />
-          <p>
-            Our vision is empower mothers to help one another to be successful
-            in their business ventures.
-          </p>
-        </VisionBox>
-        <StoryBox>
-          <StyledHeadingTwo content="Story" color="white" />
-          <p>
-            Momably was created by me,{" "}
-            <a className="link-highlight" href="/">
-              Sarah Waldie
-            </a>
-            , a freelance web developer who shifted careers and began learning
-            to code in 2016 while pregnant with my son. I found that I was most
-            passionate about opportunities to provide services to other moms. I
-            appreciated their support and always sought to pay it forward by
-            hiring moms whenever possible. In Momably, I want to create a
-            community that makes it easy for moms (and others!) to hire moms and
-            support this powerful and motivated group of businesspeople.
-          </p>
-        </StoryBox>
-      </BottomRow>
-    </AboutContainer>
-  );
+          <Stats>
+            <Stat className="col-xs-12 col-s-4">
+              <h1>5 Years</h1>
+              <p>Average Number of Years in Business</p>
+            </Stat>
+            <Stat className="col-xs-12 col-s-4">
+              <h1>52 Hours</h1>
+              <p>Average Number of Hours Spent Working Per Week</p>
+            </Stat>
+            <Stat className="col-xs-12 col-s-4">
+              <h1>70%</h1>
+              <p>Started their business after having a child.</p>
+            </Stat>
+          </Stats>
+          <h4>See more data about the moms of Momably!</h4>
+        </StatsSection>
+        <BottomRow>
+          <VisionBox>
+            <StyledHeadingTwo content="Vision" color="white" />
+            <p>
+              Our vision is empower mothers to help one another to be successful
+              in their business ventures.
+            </p>
+          </VisionBox>
+          <StoryBox>
+            <StyledHeadingTwo content="Story" color="white" />
+            <p>
+              Momably was created by me,{" "}
+              <a className="link-highlight" href="/">
+                Sarah Waldie
+              </a>
+              , a freelance web developer who shifted careers and began learning
+              to code in 2016 while pregnant with my son. I found that I was
+              most passionate about opportunities to provide services to other
+              moms. I appreciated their support and always sought to pay it
+              forward by hiring moms whenever possible. In Momably, I want to
+              create a community that makes it easy for moms (and others!) to
+              hire moms and support this powerful and motivated group of
+              businesspeople.
+            </p>
+          </StoryBox>
+        </BottomRow>
+      </AboutContainer>
+    );
+  }
 }
+
+export default Home;
