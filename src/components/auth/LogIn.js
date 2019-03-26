@@ -4,10 +4,31 @@ import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 
 const FormContainer = styled.div`
-  width: 95%;
+  width: 100%;
   height: 70vh;
-  max-width: 300px;
+`;
+
+const LogInForm = styled.div`
+  width: 95%;
+  max-width: 400px;
   margin: 50px auto;
+  border: 1px solid var(--dark-teal);
+  padding: 20px;
+  margin-top: -200px;
+  background-color: white;
+  position: relative;
+  z-index: 1000;
+
+  input {
+    width: 100%;
+  }
+`;
+
+const LogInImage = styled.div`
+background-image: url("https://picsum.photos/2000/1000?random");
+background-size: cover;
+width 100%;
+height: 300px;
 `;
 
 class SignUp extends Component {
@@ -20,7 +41,7 @@ class SignUp extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { firestore, firebase, history } = this.props;
+    const { firebase, history } = this.props;
     const { email, password } = this.state;
 
     firebase
@@ -29,7 +50,8 @@ class SignUp extends Component {
       .then(history.push("/marketplace"))
       // history.push(`/edit/${user.user.uid}`);
 
-      .catch(error => alert(error));
+      .catch(error => alert(error))
+      .then(history.push("/login"));
   };
 
   componentDidMount() {
@@ -43,41 +65,41 @@ class SignUp extends Component {
   render() {
     return (
       <FormContainer>
-        <p style={{ color: "red" }}>
-          <em>Figure out how to hide password on login.</em>
-        </p>
-        <h1>Log In</h1>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              required
-              value={this.state.email}
-              onChange={this.onChange}
-            />
-          </div>
+        <LogInImage />
+        <LogInForm>
+          <h1>Log In</h1>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                required
+                value={this.state.email}
+                onChange={this.onChange}
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              className="form-control"
-              name="password"
-              required
-              value={this.state.password}
-              onChange={this.onChange}
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                required
+                value={this.state.password}
+                onChange={this.onChange}
+              />
+            </div>
 
-          <input
-            type="submit"
-            value="Sign In"
-            className="btn btn-primary btn-block"
-          />
-        </form>
+            <input
+              type="submit"
+              value="Sign In"
+              className="btn btn-primary btn-block"
+            />
+          </form>
+        </LogInForm>
       </FormContainer>
     );
   }

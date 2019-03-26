@@ -18,8 +18,6 @@ class TopNav extends Component {
       props: { auth }
     } = this;
 
-    console.log(auth);
-
     return (
       <nav className="top-nav navbar navbar-expand-lg navbar-light bg-light">
         <NavLink to="/" className="navbar-brand">

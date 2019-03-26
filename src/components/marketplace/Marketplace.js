@@ -55,7 +55,6 @@ class Marketplace extends Component {
   };
 
   onClick = e => {
-    console.log(e.target.value);
     this.setState({ clickedItem: e.target.value });
   };
 

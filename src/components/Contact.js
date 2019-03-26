@@ -19,7 +19,7 @@ height: 300px;
 
 const ContactForm = styled.form`
   width: 95%;
-  max-width: 400px;
+  max-width: 800px;
   margin: 50px auto;
   border: 2px solid var(--light-teal);
   padding: 20px;
