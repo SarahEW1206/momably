@@ -78,11 +78,6 @@ class Marketplace extends Component {
           </Marquee>
           <NavBar onClick={this.onClick} />
           <main>
-            {/* <StyledHeadingOne
-              color="var(--dark-teal)"
-              content="Browse By Category"
-            /> */}
-            {/* <BrowseByCategory users={users} /> */}
             <StyledHeadingOne
               color="var(--dark-teal)"
               content="Browse by Category"
@@ -91,18 +86,8 @@ class Marketplace extends Component {
               Category:{" "}
               {this.state.clickedItem ? this.state.clickedItem : "All"}
             </p>
-            <p style={{ color: "red" }}>
-              <em>
-                Add category dropdown with filter function (same function as
-                clicking on orange menu; add sort by: A-Z, etc.) Also a view
-                toggler maybe? Switch between list and grid?
-              </em>
-            </p>
 
             <FeaturedListings users={users} selected={this.state.clickedItem} />
-
-            {/* <StyledLink to="/signup" content="Sign Up Now!" />
-            <StyledHeadingTwo color="#000000" content="This is an H2" /> */}
           </main>
         </Container>
       );

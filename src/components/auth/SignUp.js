@@ -24,7 +24,7 @@ const SignUpForm = styled.form`
   width: 95%;
   max-width: 800px;
   margin: 50px auto;
-  border: 1px solid var(--dark-teal);
+  border: 1px solid var(--light-teal);
   padding: 20px;
   margin-top: -200px;
   background-color: white;

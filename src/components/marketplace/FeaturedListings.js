@@ -11,6 +11,11 @@ const FeaturedListingsContainer = styled.section`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+
+  .biz-category {
+    color: #999;
+    font-size: 14px;
+  }
 `;
 
 const ListingRows = styled.div`
@@ -60,7 +65,7 @@ class FeaturedListings extends Component {
                         {business.firstName} {business.lastName}
                       </h5>
                       <p>{business.email}</p>
-                      <p>{business.category}</p>
+
                       <Link to={`/profile/${business.user_id}`}>
                         <p
                           className="link-highlight"
@@ -69,6 +74,7 @@ class FeaturedListings extends Component {
                           View Profile
                         </p>
                       </Link>
+                      <p className="biz-category">{business.category}</p>
                     </div>
                   ) : (
                     <ListingRows>
@@ -106,7 +112,6 @@ class FeaturedListings extends Component {
                         {business.firstName} {business.lastName}
                       </h5>
                       <p>{business.email}</p>
-                      <p>{business.category}</p>
                       <Link to={`/profile/${business.user_id}`}>
                         <p
                           className="link-highlight"
@@ -115,6 +120,9 @@ class FeaturedListings extends Component {
                           View Profile
                         </p>
                       </Link>
+                      <p className="biz-category">
+                        Category: {business.category}
+                      </p>
                     </div>
                   ) : (
                     <ListingRows>

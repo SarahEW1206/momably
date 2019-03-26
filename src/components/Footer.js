@@ -26,10 +26,6 @@ const FooterContainer = styled.div`
     margin: 10px auto 0 auto;
     justify-content: space-around;
   }
-
-  a {
-    color: var(--dark-teal);
-  }
 `;
 
 export default function Footer() {
@@ -49,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-second">
-        Created by <a href="/">Sarah Waldie</a>
+        Created by <a href="https://sassafrasbiz.com">Sarah Waldie</a>
       </div>
       <div className="footer-third">For MotherCoders NYC, Spring 2019</div>
     </FooterContainer>
