@@ -1,9 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
-// import { compose } from "redux";
-// import { connect } from "react-redux";
-// import { firestoreConnect } from "react-redux-firebase";
+import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
 import StyledHeadingTwo from "../elements/StyledHeadingTwo";
@@ -128,7 +125,12 @@ class FeaturedProfile extends Component {
                       <strong>Category: </strong>
                       {feature.category}
                     </p>
-                    <Link to={`/profile/${feature.user_id}`}>View Profile</Link>
+                    <Link
+                      className="link-highlight"
+                      to={`/profile/${feature.user_id}`}
+                    >
+                      View Profile
+                    </Link>
                   </div>
                 </FeatProfTopRow>
               </Fragment>
@@ -139,11 +141,8 @@ class FeaturedProfile extends Component {
   }
 }
 
-// export default compose(
-//   firestoreConnect([{ collection: "users" }]),
-//   connect((state, props) => ({
-//     users: state.firestore.ordered.users
-//   }))
-// )(FeaturedProfile);
+FeaturedProfile.propTypes = {
+  users: PropTypes.object.isRequired
+};
 
 export default FeaturedProfile;

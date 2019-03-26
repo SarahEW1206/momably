@@ -44,7 +44,6 @@ const Top = styled.div`
   position: relative;
   background-image: url("https://picsum.photos/2000/1000?random");
   background-size: cover;
-  background-color: purple;
   width 100%;
   height: 500px;
 
@@ -106,6 +105,7 @@ const Stats = styled.div`
   flex-wrap: wrap:
   flex-direction: column;
   justify-content: space-around;
+  background-color: white;
 
   @media (max-width: 650px) {
     flex-direction: column;
@@ -119,14 +119,9 @@ const Stat = styled.div`
   align-items: center;
   flex: 1
   height: 400px;
-  background-color: #fff;
-  border-top: 2px solid var(--med-peach);
-  border-bottom: 2px solid var(--med-peach);
-  border-left: 1px solid var(--med-peach);
-  border-right: 1px solid var(--med-peach);
-  padding: 70px 0;
+  padding: 50px 20px;
   
-  p {
+  p, h1 {
     text-align: center;
   }
 `;
@@ -137,8 +132,7 @@ const BottomRow = styled.section`
 `;
 
 const VisionBox = styled.div`
-  width: 50%;
-  height: 400px;
+  width: 30%;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -146,19 +140,18 @@ const VisionBox = styled.div`
   background-color: var(--dark-peach);
   padding: 60px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     width: 100%;
   }
 
   p {
     padding: 20px;
-    background-color: white;
+    background-color: var(--light-peach);
   }
 `;
 
 const StoryBox = styled.div`
-  width: 50%;
-  height: 400px;
+  width: 70%;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -166,12 +159,12 @@ const StoryBox = styled.div`
   background-color: var(--dark-teal);
   padding: 60px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     width: 100%;
   }
   p {
     padding: 20px;
-    background-color: white;
+    background-color: var(--light-peach);
   }
 `;
 
@@ -191,7 +184,7 @@ class Home extends Component {
           <h1>Moms know how hard other moms work.</h1>
         </Top>
         <WhySection>
-          <StyledHeadingTwo content="A rising tide lifts all boats." />
+          {/* <StyledHeadingTwo content="A rising tide lifts all boats." /> */}
           <WhyDescription>
             Momably is a marketplace where mothers who run businesses can sell
             to (and buy from or hire) other moms. With this kind of mutual
@@ -203,10 +196,6 @@ class Home extends Component {
           <button className="btn">Join Us!</button>
         </WhySection>
         <StatsSection>
-          {/* <StyledHeadingOne
-          color="000000"
-          content="stats section of some sort..."
-        /> */}
           <Stats>
             <Stat className="col-xs-12 col-s-4">
               <h1>5 Years</h1>
@@ -221,7 +210,7 @@ class Home extends Component {
               <p>Started their business after having a child.</p>
             </Stat>
           </Stats>
-          <h4>See more data about the moms of Momably!</h4>
+          {/* <h4>See more data about the moms of Momably!</h4> */}
         </StatsSection>
         <BottomRow>
           <VisionBox>
