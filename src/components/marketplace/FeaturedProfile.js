@@ -65,6 +65,7 @@ const FeatProfTopRow = styled.div`
 
   img {
     margin-bottom: 20px;
+    border-radius: 100%;
   }
 
   @media (min-width: 650px) {

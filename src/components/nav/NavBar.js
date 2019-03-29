@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from "react";
-import { Link, NavLink, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { connect } from "react-redux";
-import { firebaseConnect } from "react-redux-firebase";
 
 class NavBar extends Component {
   render() {

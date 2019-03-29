@@ -3,16 +3,17 @@ import styled, { keyframes } from "styled-components";
 // import { Link } from "react-router-dom";
 import StyledHeadingOne from "./elements/StyledHeadingOne";
 import StyledHeadingTwo from "./elements/StyledHeadingTwo";
+import MainImage from "../images/momandgirl.jpg";
 
 const pageFade = keyframes`
   from {
     opacity: 0;
-    transform: translateX(100%);
+    // transform: translateX(100%);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    // transform: translateX(0);
   }
 
 `;
@@ -42,7 +43,7 @@ const AboutContainer = styled.main`
 
 const Top = styled.div`
   position: relative;
-  background-image: url("https://picsum.photos/2000/1000?random");
+  background-image: url("${MainImage}");
   background-size: cover;
   width 100%;
   height: 500px;
@@ -193,7 +194,9 @@ class Home extends Component {
             matter, like spending quality time with the ones they work so hard
             for.
           </WhyDescription>
-          <button className="btn">Join Us!</button>
+          <a href="/signup" className="btn">
+            Join Us!
+          </a>
         </WhySection>
         <StatsSection>
           <Stats>

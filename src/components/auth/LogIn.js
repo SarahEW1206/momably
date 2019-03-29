@@ -50,8 +50,10 @@ class SignUp extends Component {
       .then(history.push("/marketplace"))
       // history.push(`/edit/${user.user.uid}`);
 
-      .catch(error => alert(error))
-      .then(history.push("/login"));
+      .catch(error => {
+        alert(error);
+        history.push("/login");
+      });
   };
 
   componentDidMount() {
