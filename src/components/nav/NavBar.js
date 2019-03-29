@@ -4,9 +4,19 @@ import { connect } from "react-redux";
 
 class NavBar extends Component {
   render() {
+    const {
+      props: { auth }
+    } = this;
+
     return (
       <Fragment>
-        <nav className="main-nav navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav
+          className={
+            auth.uid
+              ? "category-nav logged-in navbar navbar-expand-lg navbar-dark bg-dark"
+              : "category-nav logged-out navbar navbar-expand-lg navbar-dark bg-dark"
+          }
+        >
           <button
             className="navbar-toggler ml-auto"
             type="button"

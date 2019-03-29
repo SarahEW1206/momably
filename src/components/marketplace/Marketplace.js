@@ -8,32 +8,27 @@ import styled, { keyframes } from "styled-components";
 
 import SquareCTA from "./SquareCTA";
 import FeaturedProfile from "./FeaturedProfile";
-import BrowseByCategory from "./BrowseByCategory";
 import FeaturedListings from "./FeaturedListings";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
 import NavBar from "../nav/NavBar";
 // import StyledHeadingTwo from "../elements/StyledHeadingTwo";
 // import StyledLink from "../elements/StyledLink";
 
-const pageFade = keyframes`
+const SlideUp = keyframes`
   from {
-    opacity: 0;
     transform: translateY(100vh);
   }
 
   to {
-    opacity: 1;
     transform: translateY(0);
   }
-
 `;
+
 const Container = styled.div`
   width: 100%;
-  //   max-width: 1200px;
   margin: 0 auto;
-  opacity: 0;
   transform: translateY(0);
-  animation: ${pageFade} 1s linear forwards;
+  animation: ${SlideUp} 1.5s ease forwards;
 
   main {
     padding: 30px;
@@ -49,6 +44,28 @@ const Marquee = styled.section`
   background-color: var(--dark-teal);
 `;
 
+const BrowseControls = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+
+  align-items: center;
+  cursor: pointer;
+
+  .filter-by,
+  .filter-clear {
+    margin-left: 0px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .filter-by {
+    margin-right: 30px;
+  }
+`;
+
 class Marketplace extends Component {
   state = {
     clickedItem: ""
@@ -56,6 +73,10 @@ class Marketplace extends Component {
 
   onClick = e => {
     this.setState({ clickedItem: e.target.value });
+  };
+
+  onFilterClear = () => {
+    this.setState({ clickedItem: "" });
   };
 
   componentDidMount() {
@@ -82,11 +103,17 @@ class Marketplace extends Component {
               color="var(--dark-teal)"
               content="Browse by Category"
             />
-            <p>
-              Category:{" "}
-              {this.state.clickedItem ? this.state.clickedItem : "All"}
-            </p>
-
+            <BrowseControls>
+              <div className="filter-by">
+                Showing:{" "}
+                {this.state.clickedItem
+                  ? `All > ${this.state.clickedItem}`
+                  : "All"}
+              </div>
+              <div className="filter-clear" onClick={this.onFilterClear}>
+                <i className="fa fa-times" /> Clear Filter
+              </div>
+            </BrowseControls>
             <FeaturedListings users={users} selected={this.state.clickedItem} />
           </main>
         </Container>

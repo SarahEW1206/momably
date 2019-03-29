@@ -29,7 +29,7 @@ const CTABox = styled.div`
     font-size: 3rem;
     color: white;
     width: 300px;
-    animation: fadein 5s;
+    animation: fadein 3s;
   }
 
   @media (max-width: 1150px) {

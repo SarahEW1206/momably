@@ -143,7 +143,7 @@ class FeaturedProfile extends Component {
 }
 
 FeaturedProfile.propTypes = {
-  users: PropTypes.object.isRequired
+  users: PropTypes.array.isRequired
 };
 
 export default FeaturedProfile;

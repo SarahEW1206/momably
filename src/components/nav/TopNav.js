@@ -32,7 +32,7 @@ class TopNav extends Component {
         {auth.uid ? (
           <Fragment>
             <ul className="nav ml-auto">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   exact={true}
                   activeClassName="is-active"
@@ -41,7 +41,7 @@ class TopNav extends Component {
                 >
                   Home
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink
                   exact={true}
