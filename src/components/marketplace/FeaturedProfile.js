@@ -19,7 +19,7 @@ const slideIn = keyframes`
 
 const FeaturedContainer = styled.div`
   background-color: #ffebcd;
-  width: 65%;
+  width: 55%;
   transform: translateX(700px);
   opacity: 0;
   animation: ${slideIn} 1s linear forwards;

@@ -49,9 +49,7 @@ export default function ListingCard({ business }) {
       </p> */}
 
       <Link to={`/profile/${business.user_id}`}>
-        <p className="link-highlight" style={{ width: "105px" }}>
-          View Profile
-        </p>
+        <p className="link-highlight">View Profile</p>
       </Link>
       <p className="biz-category">
         <span className="info-label">Category:</span> {business.category}
