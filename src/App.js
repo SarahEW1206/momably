@@ -21,8 +21,16 @@ class App extends Component {
           <div className="App">
             <TopNav />
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/marketplace" component={Marketplace} />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/"}
+                component={Home}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/marketplace"}
+                component={Marketplace}
+              />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/login" component={LogIn} />
               <Route exact path="/edit/:id" component={EditAccount} />
