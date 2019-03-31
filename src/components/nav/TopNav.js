@@ -47,7 +47,7 @@ class TopNav extends Component {
                   exact={true}
                   activeClassName="is-active"
                   className="nav-link"
-                  to="/marketplace"
+                  to={process.env.PUBLIC_URL + "/marketplace"}
                 >
                   Marketplace
                 </NavLink>
@@ -57,7 +57,7 @@ class TopNav extends Component {
                   exact={true}
                   activeClassName="is-active"
                   className="nav-link"
-                  to={`/edit/${auth.uid}`}
+                  to={process.env.PUBLIC_URL + `/edit/${auth.uid}`}
                 >
                   Edit Profile
                 </NavLink>
@@ -67,7 +67,7 @@ class TopNav extends Component {
                   exact={true}
                   activeClassName="is-active"
                   className="nav-link"
-                  to={`/profile/${auth.uid}`}
+                  to={process.env.PUBLIC_URL + `/profile/${auth.uid}`}
                 >
                   View Profile
                 </NavLink>
@@ -82,7 +82,7 @@ class TopNav extends Component {
                   exact={true}
                   activeClassName="is-active"
                   className="nav-link"
-                  to="/contact"
+                  to={process.env.PUBLIC_URL + "/contact"}
                 >
                   Contact
                 </NavLink>
@@ -96,7 +96,7 @@ class TopNav extends Component {
                 exact={true}
                 activeClassName="is-active"
                 className="nav-link"
-                to="/"
+                to={process.env.PUBLIC_URL + "/"}
               >
                 Home
               </NavLink>
@@ -106,7 +106,7 @@ class TopNav extends Component {
                 exact={true}
                 activeClassName="is-active"
                 className="nav-link"
-                to="/marketplace"
+                to={process.env.PUBLIC_URL + "/marketplace"}
               >
                 Marketplace
               </NavLink>
@@ -116,7 +116,7 @@ class TopNav extends Component {
                 exact={true}
                 activeClassName="is-active"
                 className="nav-link"
-                to="/signup"
+                to={process.env.PUBLIC_URL + "/signup"}
               >
                 Join Us
               </NavLink>
@@ -126,7 +126,7 @@ class TopNav extends Component {
                 exact={true}
                 activeClassName="is-active"
                 className="nav-link"
-                to="/login"
+                to={process.env.PUBLIC_URL + "/login"}
               >
                 Log In
               </NavLink>
@@ -136,7 +136,7 @@ class TopNav extends Component {
                 exact={true}
                 activeClassName="is-active"
                 className="nav-link"
-                to="/contact"
+                to={process.env.PUBLIC_URL + "/contact"}
               >
                 Contact
               </NavLink>

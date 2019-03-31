@@ -31,11 +31,31 @@ class App extends Component {
                 path={process.env.PUBLIC_URL + "/marketplace"}
                 component={Marketplace}
               />
-              <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/login" component={LogIn} />
-              <Route exact path="/edit/:id" component={EditAccount} />
-              <Route exact path="/profile/:id" component={UserProfile} />
-              <Route exact path="/contact" component={Contact} />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/signup"}
+                component={SignUp}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/login"}
+                component={LogIn}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/edit/:id"}
+                component={EditAccount}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/profile/:id"}
+                component={UserProfile}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/contact"}
+                component={Contact}
+              />
             </Switch>
             <Footer />
           </div>
