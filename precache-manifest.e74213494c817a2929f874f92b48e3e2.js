@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ddb79bb02bdf2b8a5ca4",
+    "revision": "6d5197ee0c10de7c285d",
     "url": "/momably/static/css/main.eb1980b3.chunk.css"
   },
   {
-    "revision": "ddb79bb02bdf2b8a5ca4",
-    "url": "/momably/static/js/main.ddb79bb0.chunk.js"
+    "revision": "6d5197ee0c10de7c285d",
+    "url": "/momably/static/js/main.6d5197ee.chunk.js"
   },
   {
     "revision": "e939295196c1bc870cd2",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/momably/static/media/momandgirl.5520c6a6.jpg"
   },
   {
-    "revision": "8e0a69ee8e9d7cff9ed6d13eb0c8e4f3",
+    "revision": "4ae9d601ad7e23460171763bfb2953e6",
     "url": "/momably/index.html"
   }
 ];
