@@ -1,40 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
-import styled from "styled-components";
-
-const SignUpContainer = styled.div`
-  width: 100%;
-  padding: 0;
-  margin-bottom: 100px;
-
-  img {
-    width: 100%;
-  }
-`;
-
-const SignUpImage = styled.div`
-background-image: url("https://picsum.photos/2000/1000?random");
-background-size: cover;
-width 100%;
-height: 300px;
-`;
-
-const SignUpForm = styled.form`
-  width: 95%;
-  max-width: 800px;
-  margin: 50px auto;
-  border: 1px solid var(--light-teal);
-  padding: 20px;
-  margin-top: -200px;
-  background-color: white;
-  position: relative;
-  z-index: 1000;
-
-  input {
-    width: 100%;
-  }
-`;
+// import styled from "styled-components";
+import PatternedHeader from "../elements/PatternedHeader";
+import FormBox from "../elements/FormBox";
+import FullWidth from "../elements/FullWidth";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
 
 class SignUp extends Component {
   state = {
@@ -110,16 +81,13 @@ class SignUp extends Component {
 
   render() {
     return (
-      <SignUpContainer>
-        <SignUpImage />
-        <SignUpForm>
-          <h1>Create Account</h1>
-          <p style={{ color: "red" }}>
-            <em>
-              Make this a full signup form with all info including selector for
-              category, etc.
-            </em>
-          </p>
+      <FullWidth>
+        <PatternedHeader />
+        <FormBox>
+          <StyledHeadingOne
+            color="var(--dark-teal)"
+            content="Create Your Profile"
+          />
           <form onSubmit={this.onCreate}>
             <div className="form-group">
               <label htmlFor="firstName">First Name</label>
@@ -198,8 +166,8 @@ class SignUp extends Component {
               className="btn btn-primary btn-block"
             />
           </form>
-        </SignUpForm>
-      </SignUpContainer>
+        </FormBox>
+      </FullWidth>
     );
   }
 }

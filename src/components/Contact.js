@@ -1,36 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import PatternedHeader from "./elements/PatternedHeader";
+import FormBox from "./elements/FormBox";
 
 const ContactContainer = styled.section`
   width: 100%;
   padding: 0;
   margin-bottom: 100px;
-
-  img {
-    width: 100%;
-  }
-`;
-const ContactImage = styled.div`
-background-image: url("https://picsum.photos/2000/1000?random");
-background-size: cover;
-width 100%;
-height: 300px;
-`;
-
-const ContactForm = styled.form`
-  width: 95%;
-  max-width: 800px;
-  margin: 50px auto;
-  border: 2px solid var(--light-teal);
-  padding: 20px;
-  margin-top: -200px;
-  background-color: white;
-  position: relative;
-  z-index: 1000;
-
-  input {
-    width: 100%;
-  }
 `;
 
 class Contact extends Component {
@@ -44,8 +20,8 @@ class Contact extends Component {
   render() {
     return (
       <ContactContainer>
-        <ContactImage />
-        <ContactForm>
+        <PatternedHeader />
+        <FormBox>
           <h1>Contact Us</h1>
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
@@ -85,7 +61,7 @@ class Contact extends Component {
             value="Submit"
             className="btn btn-primary btn-block"
           />
-        </ContactForm>
+        </FormBox>
       </ContactContainer>
     );
   }

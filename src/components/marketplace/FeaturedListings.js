@@ -18,7 +18,7 @@ const FeaturedListingsContainer = styled.section`
 
 class FeaturedListings extends Component {
   state = {
-    gridView: true
+    gridView: false
   };
 
   onToggle = () => {

@@ -1,35 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
-import styled from "styled-components";
-
-const FormContainer = styled.div`
-  width: 100%;
-  height: 70vh;
-`;
-
-const LogInForm = styled.div`
-  width: 95%;
-  max-width: 400px;
-  margin: 50px auto;
-  border: 1px solid var(--light-teal);
-  padding: 20px;
-  margin-top: -200px;
-  background-color: white;
-  position: relative;
-  z-index: 1000;
-
-  input {
-    width: 100%;
-  }
-`;
-
-const LogInImage = styled.div`
-background-image: url("https://picsum.photos/2000/1000?random");
-background-size: cover;
-width 100%;
-height: 300px;
-`;
+// import styled from "styled-components";
+import PatternedHeader from "../elements/PatternedHeader";
+import FormBox from "../elements/FormBox";
+import FullWidth from "../elements/FullWidth";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
 
 class SignUp extends Component {
   state = {
@@ -66,10 +42,10 @@ class SignUp extends Component {
 
   render() {
     return (
-      <FormContainer>
-        <LogInImage />
-        <LogInForm>
-          <h1>Log In</h1>
+      <FullWidth>
+        <PatternedHeader />
+        <FormBox>
+          <StyledHeadingOne color="var(--dark-teal)" content="Log In" />
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -101,8 +77,8 @@ class SignUp extends Component {
               className="btn btn-primary btn-block"
             />
           </form>
-        </LogInForm>
-      </FormContainer>
+        </FormBox>
+      </FullWidth>
     );
   }
 }

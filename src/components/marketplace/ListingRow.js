@@ -7,20 +7,53 @@ export default function ListingRow({ business }) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 10px;
     margin: 3px 0;
     background-color: var(--med-peach);
+
+    @media (max-width: 800px) {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .row-biz-name {
+      width: 250px;
+      background-color: yellow;
+    }
+    .row-owner-name {
+      width: 200px;
+      background-color: purple;
+    }
+    .row-phone {
+      width: 200px;
+      background-color: green;
+    }
+
+    .row-email {
+      width: 200px;
+      background-color: red;
+    }
   `;
   return (
     <Row>
-      <strong>{business.bizName}</strong>
-      <p>
-        {business.firstName}
-        {business.lastName}
-      </p>
-      <p>{business.phone}</p>
-      {business.email} {business.extURL}{" "}
+      <div className="row-biz-name">
+        <strong>
+          <p>{business.bizName}</p>
+        </strong>
+      </div>
+      <div className="row-owner-name">
+        <p>
+          {business.firstName} {business.lastName}
+        </p>
+      </div>
+      <div className="row-phone">
+        <p>{business.phone}</p>
+      </div>
+      <div className="row-email">
+        <p>{business.email}</p>
+      </div>
     </Row>
   );
 }

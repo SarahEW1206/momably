@@ -11,6 +11,7 @@ export default function ListingCard({ business }) {
     border: 1px solid var(--light-teal);
     box-sizing: border-box;
     padding: 20px;
+    text-align: center;
 
     h6 {
       margin-top: 10px;

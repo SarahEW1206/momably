@@ -5,27 +5,11 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 
-import styled from "styled-components";
+// import styled from "styled-components";
+import FullWidth from "../elements/FullWidth";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
-
-const EditFormContainer = styled.div`
-  width: 100%;
-  height: 80vh;
-  padding: 0;
-`;
-
-const EditForm = styled.main`
-  width: 95%;
-  max-width: 900px;
-  margin: 50px auto;
-
-  form {
-    margin-top: 30px;
-  }
-  input {
-    width: 100%;
-  }
-`;
+import PatternedHeader from "../elements/PatternedHeader";
+import FormBox from "../elements/FormBox";
 
 class EditAccount extends Component {
   state = {
@@ -78,16 +62,9 @@ class EditAccount extends Component {
 
     if (user) {
       return (
-        <EditFormContainer>
-          {/* <div className="row">
-            <div className="col-md-6">
-              <Link to="/" className="btn btn-link">
-                <i className="fas fa-arrow-circle-left" />
-                Return to Dashboard
-              </Link>
-            </div>
-          </div> */}
-          <EditForm>
+        <FullWidth>
+          <PatternedHeader />
+          <FormBox>
             <StyledHeadingOne content="Edit Your Account Info" color="#333" />
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
@@ -158,8 +135,8 @@ class EditAccount extends Component {
                 className="btn btn-primary btn-block"
               />
             </form>
-          </EditForm>
-        </EditFormContainer>
+          </FormBox>
+        </FullWidth>
       );
     } else {
       return <p>Waiting...</p>;
