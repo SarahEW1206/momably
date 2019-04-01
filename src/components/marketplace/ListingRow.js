@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function ListingRow({ business }) {
@@ -9,45 +10,59 @@ export default function ListingRow({ business }) {
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 10px;
-    margin: 3px 0;
+    margin: 0;
     background-color: var(--med-peach);
 
+    :nth-of-type(even) {
+      background-color: white;
+    }
+
     p {
+      font-size: 16px;
       margin: 0;
       padding: 0;
     }
 
-    @media (max-width: 800px) {
-      p {
-        font-size: 14px;
-        margin: 0;
-        padding: 0;
-      }
-    }
-
     .row-biz-name {
       width: 250px;
-      background-color: yellow;
     }
     .row-owner-name {
       width: 200px;
-      background-color: purple;
     }
     .row-phone {
-      width: 200px;
-      background-color: green;
+      width: 150px;
     }
 
     .row-email {
-      width: 200px;
-      background-color: red;
+      width: 240px;
+    }
+
+    @media (max-width: 800px) {
+      a,
+      p {
+        font-size: 14px;
+      }
+
+      .row-biz-name {
+        width: 140px;
+      }
+      .row-owner-name {
+        width: 140px;
+      }
+      .row-phone {
+        width: 140px;
+      }
+
+      .row-email {
+        width: 200px;
+      }
     }
   `;
   return (
     <Row>
       <div className="row-biz-name">
         <strong>
-          <p>{business.bizName}</p>
+          <Link to={`/profile/${business.user_id}`}>{business.bizName}</Link>
         </strong>
       </div>
       <div className="row-owner-name">
@@ -60,6 +75,9 @@ export default function ListingRow({ business }) {
       </div>
       <div className="row-email">
         <p>{business.email}</p>
+      </div>
+      <div className="row-category">
+        <p>Category: {business.category}</p>
       </div>
     </Row>
   );

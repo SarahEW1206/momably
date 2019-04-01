@@ -28,7 +28,7 @@ const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   transform: translateY(0);
-  animation: ${SlideUp} 1.5s ease forwards;
+  // animation: ${SlideUp} 1.5s ease forwards;
 
   main {
     padding: 30px;
@@ -110,9 +110,13 @@ class Marketplace extends Component {
                   ? `All > ${this.state.clickedItem}`
                   : "All"}
               </div>
-              <div className="filter-clear" onClick={this.onFilterClear}>
-                <i className="fa fa-times" /> Clear Filter
-              </div>
+              {this.state.clickedItem !== "" ? (
+                <div className="filter-clear" onClick={this.onFilterClear}>
+                  <i className="fa fa-times" /> Clear Filter
+                </div>
+              ) : (
+                ""
+              )}
             </BrowseControls>
             <FeaturedListings users={users} selected={this.state.clickedItem} />
           </main>
