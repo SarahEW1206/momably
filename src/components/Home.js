@@ -247,7 +247,7 @@ class Home extends Component {
             </ul>
           </WhyDescription>
 
-          <a href="/signup" className="btn">
+          <a href={process.env.PUBLIC_URL + "/signup"} className="btn">
             Join Us!
           </a>
         </WhySection>
@@ -290,13 +290,13 @@ class Home extends Component {
                 Sarah Waldie
               </a>
               , a freelance web developer who shifted careers and began learning
-              to code in 2016 while pregnant with my son. I found that I was
-              most passionate about opportunities to provide services to other
-              moms. I appreciated their support and always sought to pay it
-              forward by hiring moms whenever possible. In Momably, I want to
-              create a community that makes it easy for moms (and others!) to
-              hire moms and support this powerful and motivated group of
-              businesspeople.
+              to code in 2016 while pregnant with my son. As a freelancer, I
+              found that I was most passionate about opportunities to provide
+              services to other moms. I appreciated their support and always
+              sought to pay it forward by hiring moms whenever possible. In
+              Momably, I want to create a community that makes it easy for moms
+              (and others!) to hire moms and support this powerful and motivated
+              group of businesspeople.
             </p>
           </StoryBox>
         </BottomRow>

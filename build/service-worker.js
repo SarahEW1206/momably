@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/momably/precache-manifest.b5913e65ab9e33c530ac4aa1f14b51de.js"
+  "/momably/precache-manifest.cdb9f4c750f3723cca67c45a9307ae1b.js"
 );
 
 workbox.clientsClaim();
