@@ -46,9 +46,27 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-second">
-        Created by <a href="https://sassafrasbiz.com">Sarah Waldie</a>
+        <p>
+          Created by{" "}
+          <a className="link-highlight" href="https://sassafrasbiz.com">
+            Sarah Waldie
+          </a>
+        </p>
       </div>
-      <div className="footer-third">For MotherCoders NYC, Spring 2019</div>
+      <div className="footer-third">
+        <p>For MotherCoders NYC, Spring 2019</p>
+        <p>
+          <em>
+            Hompage Statistics from:{" "}
+            <a
+              className="link-highlight"
+              href="https://www.entrepreneur.com/article/294184"
+            >
+              Entrepreneur.com
+            </a>
+          </em>
+        </p>
+      </div>
     </FooterContainer>
   );
 }

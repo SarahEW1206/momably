@@ -123,6 +123,7 @@ const WhyDescription = styled.div`
   }
 `;
 
+//Don't necessarily need this now, but will serve as a container if future elements are added here.
 const StatsSection = styled.section`
   // background-color: var(--light-peach);
   width: 100%;
@@ -156,6 +157,27 @@ const Stat = styled.div`
     text-align: center;
   }
 
+
+  i {
+    display: flex;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    color: white;
+    background-color: var(--dark-teal);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 10px #999;
+    transition: transform 1.0s ease-in-out, background-color 1.0s ease-in-out;
+  }
+
+  i:hover {
+    transform: rotateY(180deg);
+    background-color: var(--med-peach);
+  }
+
   @media (max-width: 768px) {
     height: auto;
   }
@@ -183,6 +205,8 @@ const VisionBox = styled.div`
   p {
     padding: 20px;
     background-color: var(--light-peach);
+    box-shadow: 0px 2px 6px #333;
+    border: 1px solid var(--light-teal);
   }
 `;
 
@@ -201,6 +225,8 @@ const StoryBox = styled.div`
   p {
     padding: 20px;
     background-color: var(--light-peach);
+    box-shadow: 0px 2px 6px #333;
+    border: 1px solid var(--light-teal);
   }
 `;
 
@@ -254,25 +280,27 @@ class Home extends Component {
         <StatsSection>
           <Stats>
             <Stat className="col-xs-12 col-s-4">
-              <h1>71%</h1>
+              <StyledHeadingOne content="71%" />
               <p>Of mom entrepreneurs are the primary childcare provider.</p>
+              <i class="fas fa-baby" />
             </Stat>
             <Stat className="col-xs-12 col-s-4">
-              <h1>44%</h1>
+              <StyledHeadingOne content="44%" />
               <p>
                 Of mom entrepreneurs sometimes feel guilty about
                 entrepreneurship!
               </p>
+              <i class="far fa-sad-tear" />
             </Stat>
             <Stat className="col-xs-12 col-s-4">
-              <h1>80%</h1>
+              <StyledHeadingOne content="80%" />
               <p>
                 Of mom entrepreneurs started their business after having a
                 child.
               </p>
+              <i class="fas fa-baby-carriage" />
             </Stat>
           </Stats>
-          {/* <h4>See more data about the moms of Momably!</h4> */}
         </StatsSection>
         <BottomRow>
           <VisionBox>
