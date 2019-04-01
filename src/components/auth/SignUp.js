@@ -57,16 +57,16 @@ class SignUp extends Component {
             featured: true,
             bizDesc,
             bizName,
-            category: "Business Category",
+            category,
             email,
-            extURL: "https://sassafrasbiz.com",
+            extURL,
             firstName,
-            imgURL: "https://picsum.photos/200/200",
+            imgURL: "https://picsum.photos/200/200?random",
             lastName,
             password,
-            phone: "111-111-1111"
+            phone
           })
-          .then(() => history.push(`/edit/${user_id}`));
+          .then(() => history.push(`/profile/${user_id}`));
       })
       .catch(error => alert(error));
   };
@@ -90,7 +90,7 @@ class SignUp extends Component {
           />
           <form onSubmit={this.onCreate}>
             <div className="form-group">
-              <label htmlFor="firstName">First Name</label>
+              <label htmlFor="firstName">First Name*</label>
               <input
                 type="text"
                 className="form-control"
@@ -102,7 +102,7 @@ class SignUp extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="lastName">Last Name</label>
+              <label htmlFor="lastName">Last Name*</label>
               <input
                 type="text"
                 className="form-control"
@@ -113,7 +113,7 @@ class SignUp extends Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="bizName">Business Name</label>
+              <label htmlFor="bizName">Business Name*</label>
               <input
                 type="text"
                 className="form-control"
@@ -125,7 +125,38 @@ class SignUp extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="bizDesc">Business Description</label>
+              <label htmlFor="category">Business Category*</label>
+              <select
+                type="text"
+                className="form-control"
+                name="category"
+                required
+                value={this.state.category}
+                onChange={this.onChange}
+              >
+                <option value="" selected disabled hidden>
+                  Select a category
+                </option>
+                <option value="Art & Photography">Art & Photography</option>
+                <option value="Clothing & Accessories">
+                  Clothing & Accessories
+                </option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Hair & Beauty">Hair & Beauty</option>
+                <option value="Health & Fitness">Health & Fitness</option>
+                <option value="Kids & Baby">Kids & Baby</option>
+                <option value="Household=">Household</option>
+                <option value="Pets=">Pets</option>
+                <option value="Professional Services=">
+                  Professional Services
+                </option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="bizDesc">
+                Business Description* (1-2 sentences about what you offer!)
+              </label>
               <textarea
                 type="text"
                 className="form-control"
@@ -137,7 +168,31 @@ class SignUp extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="extURL">Website URL</label>
+              <input
+                type="url"
+                className="form-control"
+                name="extURL"
+                value={this.state.extURL}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="phone">Phone*</label>
+              <input
+                type="tel"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                className="form-control"
+                name="phone"
+                required
+                value={this.state.phone}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email*</label>
               <input
                 type="email"
                 className="form-control"
@@ -149,7 +204,7 @@ class SignUp extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Password* (Minimum 6 characters)</label>
               <input
                 type="text"
                 className="form-control"

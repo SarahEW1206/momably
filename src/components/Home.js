@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 // import { Link } from "react-router-dom";
 import StyledHeadingOne from "./elements/StyledHeadingOne";
 import StyledHeadingTwo from "./elements/StyledHeadingTwo";
-import MainImage from "../images/momandgirl.jpg";
+import MainImage from "../images/momably-home-collab.jpg";
 
 const pageFade = keyframes`
   from {
@@ -45,6 +45,7 @@ const Top = styled.div`
   position: relative;
   background-image: url("${MainImage}");
   background-size: cover;
+  background-position: 40% 20%;
   width 100%;
   height: 500px;
 
@@ -57,7 +58,8 @@ const Top = styled.div`
     line-height: 2.4rem;
     width: 300px;
     animation-delay: 10s;
-    animation: ${dropIn} 4s ease-in-out forwards;
+    animation: ${dropIn} 3s ease-in-out forwards;
+    text-shadow: 1px 1px 5px black;
   }
 
   @media (max-width: 500px) {
@@ -72,24 +74,52 @@ const WhySection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 100px;
   justify-content: space-around;
   align-items: center;
 
   @media (max-width: 900px) {
     padding: 40px;
-    flex-direction: column;
     align-items: flex-start;
+  }
+
+  a {
+    width: 100%;
   }
 `;
 
-const WhyDescription = styled.p`
-  width: 80%;
-  padding: 20px;
-  @media (max-width: 900px) {
+const WhyDescription = styled.div`
+  width: 100%;
+
+  ul {
+    padding: 0;
+    margin: 0 0 40px 0;
     width: 100%;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0px 40px 0px 0;
+    color: var(--dark-teal);
+    font-weight: bolder;
+    line-height: 2em;
+  }
+
+  @media (max-width: 768px) {
     padding: 0px;
+    ul {
+      text-align: left;
+    }
+    li {
+      display: list-item;
+      list-style-type: disc;
+      list-style-position: inside;
+      padding: 0;
+      color: #333;
+      font-weight: normal;
+    }
   }
 `;
 
@@ -108,7 +138,7 @@ const Stats = styled.div`
   justify-content: space-around;
   background-color: white;
 
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
@@ -120,11 +150,16 @@ const Stat = styled.div`
   align-items: center;
   flex: 1
   height: 400px;
-  padding: 50px 20px;
+  padding: 50px;
   
   p, h1 {
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+
 `;
 
 const BottomRow = styled.section`
@@ -187,13 +222,31 @@ class Home extends Component {
         <WhySection>
           {/* <StyledHeadingTwo content="A rising tide lifts all boats." /> */}
           <WhyDescription>
-            Momably is a marketplace where mothers who run businesses can sell
-            to (and buy from or hire) other moms. With this kind of mutual
-            support of one another's business ventures, moms can focus less on
-            tracking down new clients and customers, and more on things that
-            matter, like spending quality time with the ones they work so hard
-            for.
+            <p>
+              <span style={{ fontSize: "24px" }}>
+                Momably is a marketplace where moms can support one another in
+                their business ventures. As a mom with your own business, you
+                know that every client, every dollar, every minute matters.
+                Here, you can find clients who GET that, and buy from others who
+                LIVE that. Imagine what we can all accomplish with this kind of
+                mutual support!
+              </span>
+            </p>
+            <p>
+              <strong>Momably moms are:</strong>
+            </p>
+            <ul>
+              <li>Professional Organizers</li>
+              <li>Web Developers</li>
+              <li>Dog Walkers</li>
+              <li>Childcare Providers</li>
+              <li>Graphic Designers</li>
+              <li>Retailers</li>
+              <li>Event Planners</li>
+              <li>And MUCH More!</li>
+            </ul>
           </WhyDescription>
+
           <a href="/signup" className="btn">
             Join Us!
           </a>
@@ -201,16 +254,22 @@ class Home extends Component {
         <StatsSection>
           <Stats>
             <Stat className="col-xs-12 col-s-4">
-              <h1>5 Years</h1>
-              <p>Average Number of Years in Business</p>
+              <h1>71%</h1>
+              <p>Of mom entrepreneurs are the primary childcare provider.</p>
             </Stat>
             <Stat className="col-xs-12 col-s-4">
-              <h1>52 Hours</h1>
-              <p>Average Number of Hours Spent Working Per Week</p>
+              <h1>44%</h1>
+              <p>
+                Of mom entrepreneurs sometimes feel guilty about
+                entrepreneurship!
+              </p>
             </Stat>
             <Stat className="col-xs-12 col-s-4">
-              <h1>70%</h1>
-              <p>Started their business after having a child.</p>
+              <h1>80%</h1>
+              <p>
+                Of mom entrepreneurs started their business after having a
+                child.
+              </p>
             </Stat>
           </Stats>
           {/* <h4>See more data about the moms of Momably!</h4> */}
@@ -226,7 +285,7 @@ class Home extends Component {
           <StoryBox>
             <StyledHeadingTwo content="Story" color="white" />
             <p>
-              Momably was created by me,{" "}
+              Momably was created by{" "}
               <a className="link-highlight" href="/">
                 Sarah Waldie
               </a>

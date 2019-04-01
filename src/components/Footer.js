@@ -7,7 +7,7 @@ const FooterContainer = styled.div`
   width: 100%;
   // display: flex;
   // flex-wrap: wrap;
-  background-color: var(--light-peach);
+  background-color: white;
   text-align: center;
   padding: 20px;
   position: relative;
@@ -23,6 +23,7 @@ const FooterContainer = styled.div`
   .footer-menu {
     width: 350px;
     display: flex;
+    font-size: 16px;
     margin: 10px auto 0 auto;
     justify-content: space-around;
   }

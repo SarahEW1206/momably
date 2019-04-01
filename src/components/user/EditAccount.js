@@ -13,9 +13,15 @@ import FormBox from "../elements/FormBox";
 
 class EditAccount extends Component {
   state = {
-    firstName: "",
-    lastName: "",
+    bizDesc: "",
+    bizName: "",
+    category: "",
     email: "",
+    extURL: "",
+    firstName: "",
+    imgURL: "",
+    lastName: "",
+    password: "",
     phone: ""
   };
 
@@ -38,27 +44,41 @@ class EditAccount extends Component {
     e.preventDefault();
 
     const { user, firestore, history } = this.props;
-    const { firstName, lastName, email, phone } = this.state;
+    const {
+      bizDesc,
+      bizName,
+      category,
+      email,
+      extURL,
+      firstName,
+      lastName,
+      password,
+      phone
+    } = this.state;
 
     let userEdits = {
       //If something is put in the input field, added to the userEdits object. Otherwise the value is not changed from what is in Firestore (aka user.whatever).
       firstName: firstName === "" ? user.firstName : firstName,
       lastName: lastName === "" ? user.lastName : lastName,
+      bizName: bizName === "" ? user.bizName : bizName,
+      category: category === "" ? user.category : category,
+      bizDesc: bizDesc === "" ? user.bizDesc : bizDesc,
+      extURL: extURL === "" ? user.extURL : extURL,
+      phone: phone === "" ? user.phone : phone,
       email: email === "" ? user.email : email,
-      phone: phone === "" ? user.phone : phone
+      password: password === "" ? user.password : password
     };
 
     //Update the info in Firestore
     firestore
       .update({ collection: "users", doc: user.id }, userEdits)
-      .then(() => history.push(`/`));
+      .then(() => history.push(`/marketplace`));
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     const { user } = this.props;
-    const { firstName, lastName, email, phone } = this.state;
 
     if (user) {
       return (
@@ -68,70 +88,144 @@ class EditAccount extends Component {
             <StyledHeadingOne content="Edit Your Account Info" color="#333" />
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label htmlFor="firstName" className="htmlFor">
-                  First Name
-                </label>
+                <label htmlFor="firstName">First Name*</label>
                 <input
                   type="text"
                   className="form-control"
                   name="firstName"
-                  minLength="2"
-                  onChange={this.onChange}
                   placeholder={user.firstName}
-                  value={firstName}
+                  value={this.state.firstName}
+                  onChange={this.onChange}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="lastName" className="htmlFor">
-                  Last Name
-                </label>
+                <label htmlFor="lastName">Last Name*</label>
                 <input
                   type="text"
                   className="form-control"
                   name="lastName"
-                  minLength="2"
-                  onChange={this.onChange}
                   placeholder={user.lastName}
-                  value={lastName}
+                  required
+                  value={this.state.lastName}
+                  onChange={this.onChange}
                 />
               </div>
-
               <div className="form-group">
-                <label htmlFor="email" className="htmlFor">
-                  Email
-                </label>
+                <label htmlFor="bizName">Business Name*</label>
                 <input
                   type="text"
                   className="form-control"
-                  name="email"
-                  minLength="2"
-                  // required
+                  name="bizName"
+                  placeholder={user.bizName}
+                  required
+                  value={this.state.bizName}
                   onChange={this.onChange}
-                  placeholder={user.email}
-                  value={email}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone" className="htmlFor">
-                  Phone
-                </label>
-                <input
+                <label htmlFor="category">Business Category*</label>
+                <select
                   type="text"
+                  className="form-control"
+                  name="category"
+                  placeholder={user.category}
+                  required
+                  value={this.state.category}
+                  onChange={this.onChange}
+                >
+                  <option value="" selected disabled hidden>
+                    Select a category
+                  </option>
+                  <option value="Art & Photography">Art & Photography</option>
+                  <option value="Clothing & Accessories">
+                    Clothing & Accessories
+                  </option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Hair & Beauty">Hair & Beauty</option>
+                  <option value="Health & Fitness">Health & Fitness</option>
+                  <option value="Kids & Baby">Kids & Baby</option>
+                  <option value="Household=">Household</option>
+                  <option value="Pets=">Pets</option>
+                  <option value="Professional Services=">
+                    Professional Services
+                  </option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="bizDesc">
+                  Business Description* (1-2 sentences about what you offer!)
+                </label>
+                <textarea
+                  type="text"
+                  className="form-control"
+                  name="bizDesc"
+                  placeholder={user.bizDesc}
+                  required
+                  value={this.state.bizDesc}
+                  onChange={this.onChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="extURL">Website URL</label>
+                <input
+                  type="url"
+                  className="form-control"
+                  name="extURL"
+                  placeholder={user.extURL}
+                  value={this.state.extURL}
+                  onChange={this.onChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="phone">Phone* (xxx-xxx-xxxx)</label>
+                <input
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   className="form-control"
                   name="phone"
-                  minLength="10"
-                  // required
-                  onChange={this.onChange}
                   placeholder={user.phone}
-                  value={phone}
+                  required
+                  value={this.state.phone}
+                  onChange={this.onChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Email*</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  placeholder={user.email}
+                  required
+                  value={this.state.email}
+                  onChange={this.onChange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="password">
+                  Password* (Minimum 6 characters)
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  placeholder={user.password}
+                  required
+                  value={this.state.password}
+                  onChange={this.onChange}
                 />
               </div>
 
               <input
                 type="submit"
-                value="Submit"
+                value="Update"
                 className="btn btn-primary btn-block"
               />
             </form>

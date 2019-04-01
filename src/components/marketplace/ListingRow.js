@@ -12,9 +12,16 @@ export default function ListingRow({ business }) {
     margin: 3px 0;
     background-color: var(--med-peach);
 
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
     @media (max-width: 800px) {
       p {
         font-size: 14px;
+        margin: 0;
+        padding: 0;
       }
     }
 

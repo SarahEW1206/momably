@@ -23,13 +23,12 @@ class SignUp extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(history.push("/marketplace"))
-      // history.push(`/edit/${user.user.uid}`);
 
       .catch(error => {
         alert(error);
         history.push("/login");
-      });
+      })
+      .then(history.push("/marketplace"));
   };
 
   componentDidMount() {

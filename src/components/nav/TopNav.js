@@ -20,7 +20,7 @@ class TopNav extends Component {
 
     return (
       <nav className="top-nav navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink to="/" className="navbar-brand">
+        <NavLink to={process.env.PUBLIC_URL + "/"} className="navbar-brand">
           <img
             className="header-logo"
             src={Logo}
