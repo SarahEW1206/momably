@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import StyledHeadingOne from "./elements/StyledHeadingOne";
 import StyledHeadingTwo from "./elements/StyledHeadingTwo";
 import MainImage from "../images/momably-home-collab.jpg";
@@ -247,9 +247,9 @@ class Home extends Component {
             </ul>
           </WhyDescription>
 
-          <a href={process.env.PUBLIC_URL + "/signup"} className="btn">
+          <Link to={process.env.PUBLIC_URL + "/signup"} className="btn">
             Join Us!
-          </a>
+          </Link>
         </WhySection>
         <StatsSection>
           <Stats>
