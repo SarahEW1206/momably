@@ -48,7 +48,7 @@ export default function ListingCard({ business }) {
         <span className="info-label">Email:</span> {business.email}
       </p> */}
 
-      <Link to={`/profile/${business.user_id}`}>
+      <Link to={process.env.PUBLIC_URL + `/profile/${business.user_id}`}>
         <p className="link-highlight">View Profile</p>
       </Link>
       <p className="biz-category">
