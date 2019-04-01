@@ -286,7 +286,7 @@ class Home extends Component {
             <StyledHeadingTwo content="Story" color="white" />
             <p>
               Momably was created by{" "}
-              <a className="link-highlight" href="/">
+              <a className="link-highlight" href={process.env.PUBLIC_URL + "/"}>
                 Sarah Waldie
               </a>
               , a freelance web developer who shifted careers and began learning

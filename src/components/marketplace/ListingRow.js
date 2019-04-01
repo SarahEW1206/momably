@@ -62,7 +62,9 @@ export default function ListingRow({ business }) {
     <Row>
       <div className="row-biz-name">
         <strong>
-          <Link to={`/profile/${business.user_id}`}>{business.bizName}</Link>
+          <Link to={process.env.PUBLIC_URL + `/profile/${business.user_id}`}>
+            {business.bizName}
+          </Link>
         </strong>
       </div>
       <div className="row-owner-name">

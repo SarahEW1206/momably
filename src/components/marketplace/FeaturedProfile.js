@@ -128,7 +128,9 @@ class FeaturedProfile extends Component {
                     </p>
                     <Link
                       className="link-highlight"
-                      to={`/profile/${feature.user_id}`}
+                      to={
+                        process.env.PUBLIC_URL + `/profile/${feature.user_id}`
+                      }
                     >
                       View Profile
                     </Link>

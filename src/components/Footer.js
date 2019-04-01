@@ -40,9 +40,9 @@ export default function Footer() {
           alt="momably logo"
         />
         <div className="footer-menu">
-          <Link to="/">Home</Link>
-          <Link to="/signup">Join Us</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to={process.env.PUBLIC_URL + "/"}>Home</Link>
+          <Link to={process.env.PUBLIC_URL + "/signup"}>Join Us</Link>
+          <Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
         </div>
       </div>
       <div className="footer-second">
