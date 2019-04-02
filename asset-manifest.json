@@ -1,14 +1,14 @@
 {
-  "main.css": "/momably/static/css/main.eb1980b3.chunk.css",
-  "main.js": "/momably/static/js/main.6c41dc29.chunk.js",
-  "main.js.map": "/momably/static/js/main.6c41dc29.chunk.js.map",
+  "main.css": "/momably/static/css/main.fe323a90.chunk.css",
+  "main.js": "/momably/static/js/main.bcc80673.chunk.js",
+  "main.js.map": "/momably/static/js/main.bcc80673.chunk.js.map",
   "runtime~main.js": "/momably/static/js/runtime~main.e9392951.js",
   "runtime~main.js.map": "/momably/static/js/runtime~main.e9392951.js.map",
-  "static/js/2.a2ffe3e7.chunk.js": "/momably/static/js/2.a2ffe3e7.chunk.js",
-  "static/js/2.a2ffe3e7.chunk.js.map": "/momably/static/js/2.a2ffe3e7.chunk.js.map",
+  "static/js/2.742f061c.chunk.js": "/momably/static/js/2.742f061c.chunk.js",
+  "static/js/2.742f061c.chunk.js.map": "/momably/static/js/2.742f061c.chunk.js.map",
   "index.html": "/momably/index.html",
-  "precache-manifest.ad9cf17d96a6c32fa303e2784ae55c7e.js": "/momably/precache-manifest.ad9cf17d96a6c32fa303e2784ae55c7e.js",
+  "precache-manifest.684f13744c269d08e9ac9161e2a868a0.js": "/momably/precache-manifest.684f13744c269d08e9ac9161e2a868a0.js",
   "service-worker.js": "/momably/service-worker.js",
-  "static/css/main.eb1980b3.chunk.css.map": "/momably/static/css/main.eb1980b3.chunk.css.map",
+  "static/css/main.fe323a90.chunk.css.map": "/momably/static/css/main.fe323a90.chunk.css.map",
   "static/media/momably-home-collab.jpg": "/momably/static/media/momably-home-collab.d67cc911.jpg"
 }
