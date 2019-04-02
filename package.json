@@ -2,7 +2,7 @@
   "name": "moco",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sarahew1206.github.io/momably/",
+  "homepage": "http://momably.com",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "firebase": "^5.6.0",
