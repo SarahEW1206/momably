@@ -182,3 +182,34 @@ a.btn:hover {
   color: var(--dark-teal);
   box-shadow: inset 0 -25px 0 -1px var(--med-peach);
 }
+
+.yellow {
+  height: 500px;
+  background-color: yellow;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+.container-animate {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting {
+  color: green;
+  font-size: 0rem;
+  text-align: center;
+  transition: font-size 3s ease, color 3s ease;
+}
+
+.greeting-animate {
+  font-size: 3rem;
+  color: orange;
+}

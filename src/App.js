@@ -12,6 +12,7 @@ import EditAccount from "./components/user/EditAccount";
 import UserProfile from "./components/user/UserProfile";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollTest from "./components/ScrollTest";
 
 class App extends Component {
   render() {
@@ -55,6 +56,11 @@ class App extends Component {
                 exact
                 path={process.env.PUBLIC_URL + "/contact"}
                 component={Contact}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/scroll"}
+                component={ScrollTest}
               />
             </Switch>
             <Footer />

@@ -173,7 +173,7 @@ const Stat = styled.div`
     transition: transform 1.0s ease-in-out, background-color 1.0s ease-in-out;
   }
 
-  i:hover {
+  :hover i {
     transform: rotateY(180deg);
     background-color: var(--med-peach);
   }

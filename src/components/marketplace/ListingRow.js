@@ -25,6 +25,7 @@ export default function ListingRow({ business }) {
 
     .row-biz-name {
       width: 250px;
+      line-height: 18.2px;
     }
     .row-owner-name {
       width: 200px;
