@@ -25,6 +25,19 @@ class FeaturedListings extends Component {
     this.setState({ gridView: !this.state.gridView });
   };
 
+  compare = (a, b) => {
+    const bizA = a.bizName.toUpperCase();
+    const bizB = b.bizName.toUpperCase();
+
+    let comparison = 0;
+    if (bizA > bizB) {
+      comparison = 1;
+    } else if (bizA < bizB) {
+      comparison = -1;
+    }
+    return comparison;
+  };
+
   render() {
     const { users, selected } = this.props;
 
@@ -47,6 +60,7 @@ class FeaturedListings extends Component {
           <FeaturedListingsContainer>
             {users
               .filter(item => item.category === `${selected}`)
+              .sort(this.compare)
               .map(business => (
                 <Fragment>
                   {this.state.gridView ? (
@@ -72,7 +86,7 @@ class FeaturedListings extends Component {
             </button>
           )}
           <FeaturedListingsContainer>
-            {users.map(business => (
+            {users.sort(this.compare).map(business => (
               <Fragment>
                 {this.state.gridView ? (
                   <ListingCard business={business} />
