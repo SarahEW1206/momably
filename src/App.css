@@ -43,15 +43,15 @@ a:hover {
   margin-left: 20px;
 }
 
-.category-nav {
+/* .category-nav {
   position: sticky;
   top: 60px;
   z-index: 2000;
-}
+} */
 
 /* Not logged in */
 
-@media screen and (max-width: 489px) {
+/* @media screen and (max-width: 489px) {
   .category-nav.logged-out {
     top: 135px;
     padding-top: 11px;
@@ -63,11 +63,11 @@ a:hover {
     top: 97px;
     padding-top: 11px;
   }
-}
+} */
 
 /* Logged in */
 
-@media screen and (max-width: 579px) {
+/* @media screen and (max-width: 579px) {
   .category-nav.logged-in {
     top: 135px;
     padding-top: 11px;
@@ -79,7 +79,7 @@ a:hover {
     top: 97px;
     padding-top: 11px;
   }
-}
+} */
 
 .top-nav {
   position: sticky;
