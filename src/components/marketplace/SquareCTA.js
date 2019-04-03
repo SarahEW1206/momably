@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Styledh1 from "../elements/StyledHeadingOne";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
 
 const CTABox = styled.div`
   width: 35%;
@@ -26,9 +27,8 @@ const CTABox = styled.div`
   }
 
   .fade-in {
-    font-size: 3rem;
     color: white;
-    width: 300px;
+    // width: 300px;
     animation: fadein 3s;
   }
 
@@ -44,12 +44,11 @@ export default function SquareCTA() {
   return (
     <CTABox className="ctabox">
       <div>
-        {/* <Styledh1
+        <StyledHeadingOne
           className="fade-in"
-          color="#ffffff"
-          content="Things I've Made!"
-        /> */}
-        <h1 className="fade-in">The Momably Marketplace.</h1>
+          content="The Momably Marketplace."
+          color="white"
+        />
       </div>
     </CTABox>
   );
