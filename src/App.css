@@ -53,14 +53,14 @@ a:hover {
 
 @media screen and (max-width: 489px) {
   .category-nav.logged-out {
-    top: 138px;
+    top: 135px;
     padding-top: 11px;
   }
 }
 
 @media screen and (min-width: 490px) and (max-width: 667px) {
   .category-nav.logged-out {
-    top: 100px;
+    top: 97px;
     padding-top: 11px;
   }
 }
@@ -69,14 +69,14 @@ a:hover {
 
 @media screen and (max-width: 579px) {
   .category-nav.logged-in {
-    top: 138px;
+    top: 135px;
     padding-top: 11px;
   }
 }
 
 @media screen and (min-width: 580px) and (max-width: 757px) {
   .category-nav.logged-in {
-    top: 100px;
+    top: 97px;
     padding-top: 11px;
   }
 }

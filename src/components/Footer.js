@@ -21,7 +21,7 @@ const FooterContainer = styled.div`
   }
 
   .footer-menu {
-    width: 350px;
+    width: 280px;
     display: flex;
     font-size: 16px;
     margin: 10px auto 0 auto;

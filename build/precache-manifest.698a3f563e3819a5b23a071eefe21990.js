@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "de5a243b11d384894792",
-    "url": "/static/css/main.fe323a90.chunk.css"
+    "revision": "5c52f58ec8eb75c8c275",
+    "url": "/static/css/main.5fb74777.chunk.css"
   },
   {
-    "revision": "de5a243b11d384894792",
-    "url": "/static/js/main.de5a243b.chunk.js"
+    "revision": "5c52f58ec8eb75c8c275",
+    "url": "/static/js/main.5c52f58e.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/static/media/momably-home-collab.d67cc911.jpg"
   },
   {
-    "revision": "eef21eba19120699113cd144b72a38c3",
+    "revision": "7a603c911a54627b14847084a33e416d",
     "url": "/index.html"
   }
 ];
