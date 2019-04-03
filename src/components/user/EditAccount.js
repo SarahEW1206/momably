@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
+import firebase from "firebase";
+import FileUploader from "react-firebase-file-uploader";
 
 // import styled from "styled-components";
 import FullWidth from "../elements/FullWidth";
@@ -22,7 +24,28 @@ class EditAccount extends Component {
     imgURL: "",
     lastName: "",
     password: "",
-    phone: ""
+    phone: "",
+    avatar: "",
+    isUploading: false,
+    progress: 0
+  };
+
+  handleChangeUsername = event =>
+    this.setState({ username: event.target.value });
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+  handleProgress = progress => this.setState({ progress });
+  handleUploadError = error => {
+    this.setState({ isUploading: false });
+    console.error(error);
+  };
+  handleUploadSuccess = filename => {
+    this.setState({ avatar: filename, progress: 100, isUploading: false });
+    firebase
+      .storage()
+      .ref("images")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ imgURL: url }));
   };
 
   //To input current as value and make it editable.
@@ -50,6 +73,7 @@ class EditAccount extends Component {
       category,
       email,
       extURL,
+      imgURL,
       firstName,
       lastName,
       password,
@@ -64,6 +88,7 @@ class EditAccount extends Component {
       category: category === "" ? user.category : category,
       bizDesc: bizDesc === "" ? user.bizDesc : bizDesc,
       extURL: extURL === "" ? user.extURL : extURL,
+      imgURL: imgURL === "" ? user.imgURL : imgURL,
       phone: phone === "" ? user.phone : phone,
       email: email === "" ? user.email : email,
       password: password === "" ? user.password : password
@@ -72,7 +97,7 @@ class EditAccount extends Component {
     //Update the info in Firestore
     firestore
       .update({ collection: "users", doc: user.id }, userEdits)
-      .then(() => history.push(`/marketplace`));
+      .then(() => history.push(`/profile/${user.user_id}`));
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -88,7 +113,7 @@ class EditAccount extends Component {
             <StyledHeadingOne content="Edit Your Account Info" color="#333" />
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label htmlFor="firstName">First Name*</label>
+                <label htmlFor="firstName">First Name</label>
                 <input
                   type="text"
                   className="form-control"
@@ -100,44 +125,59 @@ class EditAccount extends Component {
               </div>
 
               <div className="form-group">
-                <label htmlFor="lastName">Last Name*</label>
+                <label htmlFor="lastName">Last Name</label>
                 <input
                   type="text"
                   className="form-control"
                   name="lastName"
                   placeholder={user.lastName}
-                  required
                   value={this.state.lastName}
                   onChange={this.onChange}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="bizName">Business Name*</label>
+                <label htmlFor="bizName">Business Name</label>
                 <input
                   type="text"
                   className="form-control"
                   name="bizName"
                   placeholder={user.bizName}
-                  required
                   value={this.state.bizName}
                   onChange={this.onChange}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="category">Business Category*</label>
+                <label>Image/Logo</label>
+                {this.state.isUploading && (
+                  <p>Progress: {this.state.progress}</p>
+                )}
+                {this.state.imgURL && <img src={this.state.imgURL} />}
+                <FileUploader
+                  accept="image/*"
+                  name="avatar"
+                  randomizeFilename
+                  storageRef={firebase.storage().ref("images")}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="category">Business Category</label>
                 <select
                   type="text"
                   className="form-control"
                   name="category"
                   placeholder={user.category}
-                  required
                   value={this.state.category}
                   onChange={this.onChange}
                 >
-                  <option value="" selected disabled hidden>
+                  {/* <option value="" selected disabled hidden>
                     Select a category
-                  </option>
+                  </option> */}
                   <option value="Art & Photography">Art & Photography</option>
                   <option value="Clothing & Accessories">
                     Clothing & Accessories
@@ -156,14 +196,13 @@ class EditAccount extends Component {
 
               <div className="form-group">
                 <label htmlFor="bizDesc">
-                  Business Description* (1-2 sentences about what you offer!)
+                  Business Description (1-2 sentences about what you offer!)
                 </label>
                 <textarea
                   type="text"
                   className="form-control"
                   name="bizDesc"
                   placeholder={user.bizDesc}
-                  required
                   value={this.state.bizDesc}
                   onChange={this.onChange}
                 />
@@ -182,27 +221,25 @@ class EditAccount extends Component {
               </div>
 
               <div className="form-group">
-                <label htmlFor="phone">Phone* (xxx-xxx-xxxx)</label>
+                <label htmlFor="phone">Phone (xxx-xxx-xxxx)</label>
                 <input
                   type="tel"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   className="form-control"
                   name="phone"
                   placeholder={user.phone}
-                  required
                   value={this.state.phone}
                   onChange={this.onChange}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email*</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   className="form-control"
                   name="email"
                   placeholder={user.email}
-                  required
                   value={this.state.email}
                   onChange={this.onChange}
                 />
@@ -210,14 +247,13 @@ class EditAccount extends Component {
 
               <div className="form-group">
                 <label htmlFor="password">
-                  Password* (Minimum 6 characters)
+                  Password (Minimum 6 characters)
                 </label>
                 <input
                   type="password"
                   className="form-control"
                   name="password"
                   placeholder={user.password}
-                  required
                   value={this.state.password}
                   onChange={this.onChange}
                 />

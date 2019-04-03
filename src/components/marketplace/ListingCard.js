@@ -19,7 +19,7 @@ export default function ListingCard({ business }) {
 
     img {
       width: 100%;
-      max-width: 200px;
+      max-width: 150px;
       border-radius: 100%;
     }
 

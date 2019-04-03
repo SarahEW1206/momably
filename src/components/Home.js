@@ -282,7 +282,7 @@ class Home extends Component {
             <Stat className="col-xs-12 col-s-4">
               <StyledHeadingOne content="71%" />
               <p>Of mom entrepreneurs are the primary childcare provider.</p>
-              <i class="fas fa-baby" />
+              <i className="fas fa-baby" />
             </Stat>
             <Stat className="col-xs-12 col-s-4">
               <StyledHeadingOne content="44%" />
@@ -290,7 +290,7 @@ class Home extends Component {
                 Of mom entrepreneurs sometimes feel guilty about
                 entrepreneurship!
               </p>
-              <i class="far fa-sad-tear" />
+              <i className="far fa-sad-tear" />
             </Stat>
             <Stat className="col-xs-12 col-s-4">
               <StyledHeadingOne content="80%" />
@@ -298,7 +298,7 @@ class Home extends Component {
                 Of mom entrepreneurs started their business after having a
                 child.
               </p>
-              <i class="fas fa-baby-carriage" />
+              <i className="fas fa-baby-carriage" />
             </Stat>
           </Stats>
         </StatsSection>

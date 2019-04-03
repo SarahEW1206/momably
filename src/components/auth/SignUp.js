@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
+
 // import styled from "styled-components";
 import PatternedHeader from "../elements/PatternedHeader";
 import FormBox from "../elements/FormBox";
@@ -61,12 +62,12 @@ class SignUp extends Component {
             email,
             extURL,
             firstName,
-            imgURL: "https://picsum.photos/200/200?random",
+            imgURL,
             lastName,
             password,
             phone
           })
-          .then(() => history.push(`/profile/${user_id}`));
+          .then(() => history.push(`/edit/${user_id}`));
       })
       .catch(error => alert(error));
   };
