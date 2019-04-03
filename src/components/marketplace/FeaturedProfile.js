@@ -64,6 +64,9 @@ const FeatProfTopRow = styled.div`
   }
 
   img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
     margin-bottom: 20px;
     border-radius: 100%;
   }
@@ -102,7 +105,7 @@ class FeaturedProfile extends Component {
         <div className="inner-cont">
           <StyledHeadingOne content="Featured Member" />
           {users
-            .filter(item => item.user_id === "iDX0VulK2xOkRjWlFxYlmQfivc62")
+            .filter(item => item.user_id === "Dso9Mo3ncBZnzU2HH4myTGcdMxj2")
             .map(feature => (
               <Fragment key={feature.user_id}>
                 <FeatProfTopRow>

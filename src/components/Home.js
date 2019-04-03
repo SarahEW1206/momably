@@ -169,7 +169,7 @@ const Stat = styled.div`
     text-align: center;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 10px 10px #999;
+    box-shadow: 0px 2px 5px #999;
     transition: transform 1.0s ease-in-out, background-color 1.0s ease-in-out;
   }
 
@@ -205,7 +205,7 @@ const VisionBox = styled.div`
   p {
     padding: 20px;
     background-color: var(--light-peach);
-    box-shadow: 0px 2px 6px #333;
+    box-shadow: 0px 2px 3px #666;
     border: 1px solid var(--light-teal);
   }
 `;
@@ -225,7 +225,7 @@ const StoryBox = styled.div`
   p {
     padding: 20px;
     background-color: var(--light-peach);
-    box-shadow: 0px 2px 6px #333;
+    box-shadow: 0px 2px 3px #666;
     border: 1px solid var(--light-teal);
   }
 `;

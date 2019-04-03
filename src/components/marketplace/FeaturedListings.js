@@ -62,7 +62,7 @@ class FeaturedListings extends Component {
               .filter(item => item.category === `${selected}`)
               .sort(this.compare)
               .map(business => (
-                <Fragment>
+                <Fragment key={business.user_id}>
                   {this.state.gridView ? (
                     <ListingCard business={business} />
                   ) : (
@@ -87,7 +87,7 @@ class FeaturedListings extends Component {
           )}
           <FeaturedListingsContainer>
             {users.sort(this.compare).map(business => (
-              <Fragment>
+              <Fragment key={business.user_id}>
                 {this.state.gridView ? (
                   <ListingCard business={business} />
                 ) : (

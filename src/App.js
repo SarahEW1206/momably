@@ -13,7 +13,7 @@ import UserProfile from "./components/user/UserProfile";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollTest from "./components/ScrollTest";
-import FileUpload from "./components/elements/FileUpload";
+import UpdateCreds from "./components/auth/UpdateCreds";
 
 class App extends Component {
   render() {
@@ -55,10 +55,11 @@ class App extends Component {
                 path={process.env.PUBLIC_URL + "/scroll"}
                 component={ScrollTest}
               />
+
               <Route
                 exact
-                path={process.env.PUBLIC_URL + "/upload"}
-                component={FileUpload}
+                path={process.env.PUBLIC_URL + "/updatepw"}
+                component={UpdateCreds}
               />
             </Switch>
             <Footer />

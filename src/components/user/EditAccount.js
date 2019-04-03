@@ -110,7 +110,10 @@ class EditAccount extends Component {
         <FullWidth>
           <PatternedHeader />
           <FormBox>
-            <StyledHeadingOne content="Edit Your Account Info" color="#333" />
+            <StyledHeadingOne
+              content="Edit Your Account Info"
+              color="var(--dark-teal)"
+            />
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
                 <label htmlFor="firstName">First Name</label>

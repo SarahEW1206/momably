@@ -62,7 +62,8 @@ class SignUp extends Component {
             email,
             extURL,
             firstName,
-            imgURL,
+            imgURL:
+              "https://firebasestorage.googleapis.com/v0/b/moco-project-53ad1.appspot.com/o/images%2F56bdcb73-b17a-4df5-9b88-a9fdc30879d2.ico?alt=media&token=51157e64-c26d-413f-abb7-d08dbbe2c52c",
             lastName,
             password,
             phone

@@ -6,7 +6,9 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 
 import styled from "styled-components";
-// import StyledHeadingOne from "../elements/StyledHeadingOne";
+import StyledHeadingOne from "../elements/StyledHeadingOne";
+import StyledHeadingTwo from "../elements/StyledHeadingTwo";
+
 import PatternedHeader from "../elements/PatternedHeader";
 
 const ProfileContainer = styled.div`
@@ -17,18 +19,24 @@ const ProfileContainer = styled.div`
 const ProfileInnerCont = styled.div`
   width: 95%;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 50px auto;
-  border: 1px solid var(--dark-teal);
+  border: 1px solid var(--light-teal);
   padding: 50px;
   margin-top: -200px;
   background-color: white;
   position: relative;
   z-index: 1000;
+  box-shadow: 0px 2px 3px #999;
 
   img {
-    width: 100%;
-    max-width: 200px;
+    width: 200px;
+    height: 200px;
     margin: 20px 0;
+    border-radius: 100%;
   }
 `;
 
@@ -41,14 +49,29 @@ class UserProfile extends Component {
         <ProfileContainer>
           <PatternedHeader />
           <ProfileInnerCont>
-            <h1>
-              {user.firstName} {user.lastName}
-            </h1>
-            <h2>{user.bizName}</h2>
+            <StyledHeadingOne
+              content={`${user.firstName} ${user.lastName}`}
+              color="var(--dark-teal)"
+            />
+            <StyledHeadingTwo
+              content={`${user.bizName}`}
+              color="var(--dark-peach)"
+            />
             <img src={user.imgURL} alt={user.bizName} />
             <p>{user.bizDesc}</p>
+            {user.extURL && (
+              <Link to={user.extURL}>
+                <p>Visit Website</p>
+              </Link>
+            )}
             <p>{user.phone}</p>
             <p>{user.email}</p>
+            <p className="biz-category">
+              <span className="info-label">Category:</span> {user.category}
+            </p>
+            <Link className="link-highlight" to="/marketplace">
+              Back to Marketplace
+            </Link>
           </ProfileInnerCont>
         </ProfileContainer>
       );

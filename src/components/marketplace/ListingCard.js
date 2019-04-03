@@ -19,6 +19,7 @@ export default function ListingCard({ business }) {
 
     img {
       width: 100%;
+      height: 150px;
       max-width: 150px;
       border-radius: 100%;
     }
@@ -34,10 +35,7 @@ export default function ListingCard({ business }) {
   `;
 
   return (
-    <ListCard
-      key={business.user_id}
-      className="card col-12 col-sm-12 col-md-6 col-lg-4"
-    >
+    <ListCard className="card col-12 col-sm-12 col-md-6 col-lg-4">
       <h4>{business.bizName}</h4>
       <img src={business.imgURL} alt={business.bizName} />
       <h6>

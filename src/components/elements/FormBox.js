@@ -11,7 +11,7 @@ const StyledForm = styled.div`
   background-color: white;
   position: relative;
   z-index: 1000;
-  box-shadow: 0px 4px 6px #333;
+  box-shadow: 0px 2px 3px #999;
 
   input {
     width: 100%;
