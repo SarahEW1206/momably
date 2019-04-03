@@ -51,29 +51,33 @@ a:hover {
 
 /* Not logged in */
 
-@media screen and (max-width: 469px) {
+@media screen and (max-width: 489px) {
   .category-nav.logged-out {
-    top: 140px;
+    top: 138px;
+    padding-top: 11px;
   }
 }
 
-@media screen and (min-width: 470px) and (max-width: 647px) {
+@media screen and (min-width: 490px) and (max-width: 667px) {
   .category-nav.logged-out {
-    top: 102px;
+    top: 100px;
+    padding-top: 11px;
   }
 }
 
 /* Logged in */
 
-@media screen and (max-width: 555px) {
+@media screen and (max-width: 579px) {
   .category-nav.logged-in {
-    top: 140px;
+    top: 138px;
+    padding-top: 11px;
   }
 }
 
-@media screen and (min-width: 556px) and (max-width: 732px) {
+@media screen and (min-width: 580px) and (max-width: 757px) {
   .category-nav.logged-in {
-    top: 102px;
+    top: 100px;
+    padding-top: 11px;
   }
 }
 
