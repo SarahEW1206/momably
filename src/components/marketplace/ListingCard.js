@@ -23,15 +23,6 @@ export default function ListingCard({ business }) {
       max-width: 150px;
       border-radius: 100%;
     }
-
-    .info-label {
-      font-weight: bolder;
-    }
-
-    .biz-category {
-      color: #999;
-      font-size: 14px;
-    }
   `;
 
   return (

@@ -31,6 +31,7 @@ const ProfileInnerCont = styled.div`
   position: relative;
   z-index: 1000;
   box-shadow: 0px 2px 3px #999;
+  text-align: center;
 
   img {
     width: 200px;
@@ -60,12 +61,22 @@ class UserProfile extends Component {
             <img src={user.imgURL} alt={user.bizName} />
             <p>{user.bizDesc}</p>
             {user.extURL && (
-              <Link to={user.extURL}>
-                <p>Visit Website</p>
-              </Link>
+              <p>
+                <a
+                  href={user.extURL}
+                  className="link-highlight"
+                  target="_blank"
+                >
+                  Visit Website
+                </a>
+              </p>
             )}
-            <p>{user.phone}</p>
-            <p>{user.email}</p>
+            <p>
+              <span className="info-label">Phone:</span> {user.phone}
+            </p>
+            <p>
+              <span className="info-label">Email:</span> {user.email}
+            </p>
             <p className="biz-category">
               <span className="info-label">Category:</span> {user.category}
             </p>

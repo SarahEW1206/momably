@@ -147,8 +147,8 @@ class SignUp extends Component {
                 <option value="Hair & Beauty">Hair & Beauty</option>
                 <option value="Health & Fitness">Health & Fitness</option>
                 <option value="Kids & Baby">Kids & Baby</option>
-                <option value="Household=">Household</option>
-                <option value="Pets=">Pets</option>
+                <option value="Household">Household</option>
+                <option value="Pets">Pets</option>
                 <option value="Professional Services=">
                   Professional Services
                 </option>
@@ -216,7 +216,10 @@ class SignUp extends Component {
                 onChange={this.onChange}
               />
             </div>
-
+            <p>
+              We are so excited you're joining us! You will be able to add an
+              image to your profile and review your info on the next page.
+            </p>
             <input
               type="submit"
               value="CREATE"

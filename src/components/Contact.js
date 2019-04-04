@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import PatternedHeader from "./elements/PatternedHeader";
 import FormBox from "./elements/FormBox";
+import StyledHeadingOne from "./elements/StyledHeadingOne";
 
 const ContactContainer = styled.section`
   width: 100%;
@@ -22,7 +23,11 @@ class Contact extends Component {
       <ContactContainer>
         <PatternedHeader />
         <FormBox>
-          <h1>Contact Us</h1>
+          <StyledHeadingOne content="Contact Us" color="var(--dark-teal)" />
+          <p>
+            This form is currently in demo/display mode only! If you'd like to
+            reach out, please email sarah @ sassafrasbiz.com :)
+          </p>
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
             <input

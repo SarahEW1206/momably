@@ -56,11 +56,11 @@ class App extends Component {
                 component={ScrollTest}
               />
 
-              <Route
+              {/* <Route
                 exact
                 path={process.env.PUBLIC_URL + "/updatepw"}
                 component={UpdateCreds}
-              />
+              /> */}
             </Switch>
             <Footer />
           </div>

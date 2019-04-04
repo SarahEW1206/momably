@@ -217,3 +217,13 @@ a.btn:hover {
   font-size: 3rem;
   color: orange;
 }
+
+/*Info labels & Category line in Cards and Profile page */
+.info-label {
+  font-weight: bolder;
+}
+
+.biz-category {
+  color: #999;
+  font-size: 14px;
+}

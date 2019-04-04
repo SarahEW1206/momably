@@ -111,7 +111,7 @@ class EditAccount extends Component {
           <PatternedHeader />
           <FormBox>
             <StyledHeadingOne
-              content="Edit Your Account Info"
+              content="Edit Your Profile Info"
               color="var(--dark-teal)"
             />
             <form onSubmit={this.onSubmit}>
@@ -152,6 +152,10 @@ class EditAccount extends Component {
 
               <div className="form-group">
                 <label>Image/Logo</label>
+                <p style={{ fontSize: "14px" }}>
+                  Your image will be cropped to 300px x 300px, please updload an
+                  image this size for the best result!{" "}
+                </p>
                 {this.state.isUploading && (
                   <p>Progress: {this.state.progress}</p>
                 )}
@@ -165,6 +169,8 @@ class EditAccount extends Component {
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
+                  maxHeight="300"
+                  maxWidth="300"
                 />
               </div>
 
@@ -189,8 +195,8 @@ class EditAccount extends Component {
                   <option value="Hair & Beauty">Hair & Beauty</option>
                   <option value="Health & Fitness">Health & Fitness</option>
                   <option value="Kids & Baby">Kids & Baby</option>
-                  <option value="Household=">Household</option>
-                  <option value="Pets=">Pets</option>
+                  <option value="Household">Household</option>
+                  <option value="Pets">Pets</option>
                   <option value="Professional Services=">
                     Professional Services
                   </option>
@@ -236,7 +242,7 @@ class EditAccount extends Component {
                 />
               </div>
 
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -260,7 +266,7 @@ class EditAccount extends Component {
                   value={this.state.password}
                   onChange={this.onChange}
                 />
-              </div>
+              </div> */}
 
               <input
                 type="submit"
