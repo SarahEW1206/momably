@@ -13,7 +13,7 @@ import UserProfile from "./components/user/UserProfile";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollTest from "./components/ScrollTest";
-import UpdateCreds from "./components/auth/UpdateCreds";
+// import UpdateCreds from "./components/auth/UpdateCreds";
 
 class App extends Component {
   render() {

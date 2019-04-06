@@ -1,9 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
-// import { compose } from "redux";
-// import { connect } from "react-redux";
-// import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 import ListingRow from "./ListingRow";
 import ListingCard from "./ListingCard";

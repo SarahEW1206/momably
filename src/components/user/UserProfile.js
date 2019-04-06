@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { compose } from "redux";
@@ -66,14 +66,15 @@ class UserProfile extends Component {
                   href={user.extURL}
                   className="link-highlight"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Visit Website
                 </a>
               </p>
             )}
-            <p>
+            {/* <p>
               <span className="info-label">Phone:</span> {user.phone}
-            </p>
+            </p> */}
             <p>
               <span className="info-label">Email:</span> {user.email}
             </p>

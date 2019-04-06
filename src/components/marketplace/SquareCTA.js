@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Styledh1 from "../elements/StyledHeadingOne";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
 
 const CTABox = styled.div`
@@ -28,7 +27,6 @@ const CTABox = styled.div`
 
   .fade-in {
     color: white;
-    // width: 300px;
     animation: fadein 3s;
   }
 
@@ -49,6 +47,10 @@ export default function SquareCTA() {
           content="The Momably Marketplace."
           color="white"
         />
+        <p>
+          Please note that these listings are for demo purposes only, which is
+          why many contain my contact info ;-)
+        </p>
       </div>
     </CTABox>
   );

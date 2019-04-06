@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
@@ -159,7 +159,9 @@ class EditAccount extends Component {
                 {this.state.isUploading && (
                   <p>Progress: {this.state.progress}</p>
                 )}
-                {this.state.imgURL && <img src={this.state.imgURL} />}
+                {this.state.imgURL && (
+                  <img src={this.state.imgURL} alt={this.state.bizName} />
+                )}
                 <FileUploader
                   accept="image/*"
                   name="avatar"

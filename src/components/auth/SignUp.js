@@ -63,7 +63,7 @@ class SignUp extends Component {
             extURL,
             firstName,
             imgURL:
-              "https://firebasestorage.googleapis.com/v0/b/moco-project-53ad1.appspot.com/o/images%2F56bdcb73-b17a-4df5-9b88-a9fdc30879d2.ico?alt=media&token=51157e64-c26d-413f-abb7-d08dbbe2c52c",
+              "https://firebasestorage.googleapis.com/v0/b/moco-project-53ad1.appspot.com/o/images%2Ffavicon.ico?alt=media&token=1da8464f-7aac-4b2f-b3ec-ababdcc8985b",
             lastName,
             password,
             phone
@@ -149,7 +149,7 @@ class SignUp extends Component {
                 <option value="Kids & Baby">Kids & Baby</option>
                 <option value="Household">Household</option>
                 <option value="Pets">Pets</option>
-                <option value="Professional Services=">
+                <option value="Professional Services">
                   Professional Services
                 </option>
               </select>
@@ -181,13 +181,12 @@ class SignUp extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="phone">Phone*</label>
+              <label htmlFor="phone">Phone (xxx-xxx-xxxx)</label>
               <input
                 type="tel"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 className="form-control"
                 name="phone"
-                required
                 value={this.state.phone}
                 onChange={this.onChange}
               />
