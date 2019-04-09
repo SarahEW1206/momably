@@ -8,7 +8,6 @@ import { firestoreConnect } from "react-redux-firebase";
 import styled from "styled-components";
 import StyledHeadingOne from "../elements/StyledHeadingOne";
 import StyledHeadingTwo from "../elements/StyledHeadingTwo";
-
 import PatternedHeader from "../elements/PatternedHeader";
 
 const ProfileContainer = styled.div`
@@ -42,31 +41,17 @@ const ProfileInnerCont = styled.div`
 `;
 
 class UserProfile extends Component {
-  state = {
-    id: ""
-  };
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
     window.scrollTo(0, 0);
+    console.log("profile unmounted");
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log(prevState);
-  //   console.log(this.state);
-  //   if (prevProps !== this.props) {
-  //     this.setState({ id: this.props.user.user_id });
-  //   }
-  //   console.log(prevState);
-  //   console.log(this.state);
-  // }
 
   render() {
     const { user } = this.props;
-    console.log(user);
 
     if (user) {
       return (
@@ -95,9 +80,7 @@ class UserProfile extends Component {
                 </a>
               </p>
             )}
-            {/* <p>
-              <span className="info-label">Phone:</span> {user.phone}
-            </p> */}
+
             <p>
               <span className="info-label">Email:</span> {user.email}
             </p>
@@ -122,16 +105,8 @@ UserProfile.propTypes = {
 
 export default compose(
   firestoreConnect(props => [
-    //we already have "users" from users.js, and we only need one here, so we will get the user id from URL and store the respective user data as "user"
     { collection: "users", storeAs: "user", doc: props.match.params.id }
   ]),
-
-  //Below we are replacing the "state" param with destructuring of state.firestore.ordered, which if broken out would look like this:
-  // { firestore } = state
-  // and then
-  // { ordered } = firestore
-  // So when you use the "ordered" variable, it reflects state.firestore.ordered
-
   connect(({ firestore: { ordered } }, props) => ({
     user: ordered.user && ordered.user[0]
   }))

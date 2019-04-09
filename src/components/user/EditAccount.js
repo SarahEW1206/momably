@@ -98,7 +98,6 @@ class EditAccount extends Component {
     firestore
       .update({ collection: "users", doc: user.id }, userEdits)
       .then(() => history.push("/marketplace"));
-    // .then(() => history.push(`/profile/${user.user_id}`));
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
