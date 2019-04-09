@@ -68,7 +68,7 @@ class SignUp extends Component {
             password,
             phone
           })
-          .then(() => history.push(`/edit/${user_id}`));
+          .then(() => history.replace(`/edit/${user_id}`));
       })
       .catch(error => alert(error));
   };

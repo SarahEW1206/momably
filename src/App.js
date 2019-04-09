@@ -13,6 +13,7 @@ import UserProfile from "./components/user/UserProfile";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollTest from "./components/ScrollTest";
+import AboutSarah from "./components/AboutSarah";
 // import UpdateCreds from "./components/auth/UpdateCreds";
 
 class App extends Component {
@@ -49,6 +50,11 @@ class App extends Component {
                 exact
                 path={process.env.PUBLIC_URL + "/contact"}
                 component={Contact}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/about"}
+                component={AboutSarah}
               />
               <Route
                 exact

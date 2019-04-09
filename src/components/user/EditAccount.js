@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { compose } from "redux";
 import { connect } from "react-redux";
@@ -30,8 +30,8 @@ class EditAccount extends Component {
     progress: 0
   };
 
-  handleChangeUsername = event =>
-    this.setState({ username: event.target.value });
+  // handleChangeUsername = event =>
+  //   this.setState({ username: event.target.value });
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
   handleProgress = progress => this.setState({ progress });
   handleUploadError = error => {
@@ -97,7 +97,8 @@ class EditAccount extends Component {
     //Update the info in Firestore
     firestore
       .update({ collection: "users", doc: user.id }, userEdits)
-      .then(() => history.push(`/profile/${user.user_id}`));
+      .then(() => history.push("/marketplace"));
+    // .then(() => history.push(`/profile/${user.user_id}`));
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -294,6 +295,7 @@ export default compose(
     //we already have "users" from users.js, and we only need one here, so we will get the user id from URL and store the respective user data as "user"
     { collection: "users", storeAs: "user", doc: props.match.params.id }
   ]),
+
   //Below we are replacing the "state" param with destructuring of state.firestore.ordered, which if broken out would look like this:
   // { firestore } = state
   // and then

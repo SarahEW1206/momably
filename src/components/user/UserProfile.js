@@ -42,8 +42,31 @@ const ProfileInnerCont = styled.div`
 `;
 
 class UserProfile extends Component {
+  state = {
+    id: ""
+  };
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentWillUnmount() {
+    window.scrollTo(0, 0);
+  }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(prevState);
+  //   console.log(this.state);
+  //   if (prevProps !== this.props) {
+  //     this.setState({ id: this.props.user.user_id });
+  //   }
+  //   console.log(prevState);
+  //   console.log(this.state);
+  // }
+
   render() {
     const { user } = this.props;
+    console.log(user);
 
     if (user) {
       return (
@@ -102,11 +125,13 @@ export default compose(
     //we already have "users" from users.js, and we only need one here, so we will get the user id from URL and store the respective user data as "user"
     { collection: "users", storeAs: "user", doc: props.match.params.id }
   ]),
+
   //Below we are replacing the "state" param with destructuring of state.firestore.ordered, which if broken out would look like this:
   // { firestore } = state
   // and then
   // { ordered } = firestore
   // So when you use the "ordered" variable, it reflects state.firestore.ordered
+
   connect(({ firestore: { ordered } }, props) => ({
     user: ordered.user && ordered.user[0]
   }))
