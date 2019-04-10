@@ -48,9 +48,9 @@ export default function Footer() {
       <div className="footer-second">
         <p>
           Created by{" "}
-          <a className="link-highlight" href="https://sassafrasbiz.com">
+          <Link className="link-highlight" to="/about">
             Sarah Waldie
-          </a>
+          </Link>
         </p>
       </div>
       <div className="footer-third">

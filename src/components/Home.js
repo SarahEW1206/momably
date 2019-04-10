@@ -269,6 +269,7 @@ class Home extends Component {
               <li>Graphic Designers</li>
               <li>Retailers</li>
               <li>Event Planners</li>
+              <li>Jewelry Designers</li>
               <li>And MUCH More!</li>
             </ul>
           </WhyDescription>

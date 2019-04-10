@@ -105,7 +105,7 @@ class FeaturedProfile extends Component {
         <div className="inner-cont">
           <StyledHeadingOne content="Featured Member" />
           {users
-            .filter(item => item.user_id === "Dso9Mo3ncBZnzU2HH4myTGcdMxj2")
+            .filter(item => item.user_id === "mqWYzAtqNXeHiooPx1n9WZ1x8U02")
             .map(feature => (
               <Fragment key={feature.user_id}>
                 <FeatProfTopRow>

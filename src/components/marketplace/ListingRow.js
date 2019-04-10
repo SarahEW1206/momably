@@ -73,9 +73,9 @@ export default function ListingRow({ business }) {
           {business.firstName} {business.lastName}
         </p>
       </div>
-      <div className="row-phone">
+      {/* <div className="row-phone">
         <p>{business.phone}</p>
-      </div>
+      </div> */}
       <div className="row-email">
         <p>{business.email}</p>
       </div>
