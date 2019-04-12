@@ -207,7 +207,7 @@ class SignUp extends Component {
             <div className="form-group">
               <label htmlFor="password">Password* (Minimum 6 characters)</label>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 name="password"
                 required

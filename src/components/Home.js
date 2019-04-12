@@ -67,7 +67,7 @@ const Top = styled.div`
       left: 60px;
       font-size: 2rem;
       line-height: 2rem;
-      width: 300px;
+      width: 200px;
     }
   }
 `;
@@ -95,6 +95,10 @@ const WhySection = styled.section`
 const WhyDescription = styled.div`
   width: 100%;
 
+  p.overview {
+    font-size: 22px;
+  }
+
   ul {
     padding: 0;
     margin: 0 0 40px 0;
@@ -120,8 +124,7 @@ const WhyDescription = styled.div`
       list-style-type: disc;
       list-style-position: inside;
       padding: 0;
-      color: #333;
-      font-weight: normal;
+      color: #444;
     }
   }
 `;
@@ -251,15 +254,13 @@ class Home extends Component {
         <WhySection>
           {/* <StyledHeadingTwo content="A rising tide lifts all boats." /> */}
           <WhyDescription>
-            <p>
-              <span style={{ fontSize: "24px" }}>
-                Momably is a marketplace where moms who are entrepreneurs of all
-                kinds can do business with one another. As a mom running a
-                business, you know that every client, every dollar, every minute
-                matters. Here, you can find clients who GET that, and buy from
-                others who LIVE that. Imagine what we can all accomplish with
-                this kind of mutual support!
-              </span>
+            <p className="overview">
+              Momably is a marketplace where moms who are entrepreneurs of all
+              kinds can do business with one another. As a mom running a
+              business, you know that every client, every dollar, every minute
+              matters. Here, you can find clients who GET that, and buy from
+              others who LIVE that. Imagine what we can all accomplish with this
+              kind of mutual support!
             </p>
             <p>
               <strong>Momably moms are:</strong>

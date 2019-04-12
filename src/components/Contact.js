@@ -28,44 +28,50 @@ class Contact extends Component {
             This form is currently in demo/display mode only! If you'd like to
             reach out, please email sarah @ sassafrasbiz.com :)
           </p>
-          <div className="form-group">
-            <label htmlFor="firstName">First Name</label>
+          <form
+            method="POST"
+            name="contactform"
+            action="contact-form-handler.php"
+          >
+            <div className="form-group">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="firstName"
+                required
+                //   value={this.state.password}
+                //   onChange={this.onChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="lastName"
+                required
+                //   value={this.state.password}
+                //   onChange={this.onChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="lastName">Message</label>
+              <textarea
+                type="text"
+                className="form-control"
+                name="message"
+                required
+                //   value={this.state.password}
+                //   onChange={this.onChange}
+              />
+            </div>
             <input
-              type="text"
-              className="form-control"
-              name="firstName"
-              required
-              //   value={this.state.password}
-              //   onChange={this.onChange}
+              type="submit"
+              value="Submit"
+              className="btn btn-primary btn-block"
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              type="text"
-              className="form-control"
-              name="lastName"
-              required
-              //   value={this.state.password}
-              //   onChange={this.onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="lastName">Message</label>
-            <textarea
-              type="text"
-              className="form-control"
-              name="message"
-              required
-              //   value={this.state.password}
-              //   onChange={this.onChange}
-            />
-          </div>
-          <input
-            type="submit"
-            value="Submit"
-            className="btn btn-primary btn-block"
-          />
+          </form>
         </FormBox>
       </ContactContainer>
     );
