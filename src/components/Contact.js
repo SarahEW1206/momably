@@ -57,7 +57,7 @@ class Contact extends Component {
             </div>
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <textarea
+              <input
                 type="email"
                 className="form-control"
                 name="email"
