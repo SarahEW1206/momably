@@ -29,9 +29,9 @@ class Contact extends Component {
             reach out, please email sarah @ sassafrasbiz.com :)
           </p>
           <form
+            accept-charset="UTF-8"
+            action="https://usebasin.com/f/38cca78d122a"
             method="POST"
-            name="contactform"
-            action="contact-form-handler.php"
           >
             <div className="form-group">
               <label htmlFor="firstName">First Name</label>
@@ -56,6 +56,17 @@ class Contact extends Component {
               />
             </div>
             <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <textarea
+                type="email"
+                className="form-control"
+                name="email"
+                required
+                //   value={this.state.password}
+                //   onChange={this.onChange}
+              />
+            </div>
+            <div className="form-group">
               <label htmlFor="lastName">Message</label>
               <textarea
                 type="text"
@@ -66,6 +77,10 @@ class Contact extends Component {
                 //   onChange={this.onChange}
               />
             </div>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy"
+            />
             <input
               type="submit"
               value="Submit"
