@@ -24,10 +24,7 @@ class Contact extends Component {
         <PatternedHeader />
         <FormBox>
           <StyledHeadingOne content="Contact Us" color="var(--dark-teal)" />
-          <p>
-            This form is currently in demo/display mode only! If you'd like to
-            reach out, please email sarah @ sassafrasbiz.com :)
-          </p>
+          <p>Want to help make Momably a reality? I'd love to hear from you!</p>
           <form
             accept-charset="UTF-8"
             action="https://usebasin.com/f/38cca78d122a"
@@ -78,7 +75,7 @@ class Contact extends Component {
               />
             </div>
             <div
-              class="g-recaptcha"
+              className="g-recaptcha"
               data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy"
             />
             <input

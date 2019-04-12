@@ -231,3 +231,8 @@ a.btn:hover {
   color: #999;
   font-size: 14px;
 }
+
+/*Contact form - recaptcha*/
+.g-recaptcha {
+  margin-bottom: 20px;
+}
