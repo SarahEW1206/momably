@@ -38,7 +38,7 @@ const BioRow = styled.section`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 
   img {
     border-radius: 100%;
@@ -51,6 +51,10 @@ const BioText = styled.div`
   flex-grow: 1;
   width: 60%;
   padding: 30px;
+
+  p {
+    margin: 30px;
+  }
 `;
 
 export default function AboutSarah() {
@@ -58,29 +62,29 @@ export default function AboutSarah() {
     <FullWidth>
       <PatternedHeader />
       <AboutBox>
-        <StyledHeadingOne content="Hi, I'm Sarah." color="var(--dark-teal)" />
+        <StyledHeadingOne
+          content="Hi, I'm Sarah Waldie."
+          color="var(--dark-teal)"
+        />
         <BioRow>
           <img src={BioPic} width="300px" alt="biophoto" />
           <BioText>
             <p>
-              <i className="fas fa-baby" /> I am mom to Lincoln. As you can see,
-              he's not at all cute and we never have any fun.
+              <i className="fas fa-code" /> Frontend Developer
             </p>
             <p>
-              <i className="fas fa-laptop-code" /> I left an unfulfilling
-              marketing/advertising career to learn front-end development and
-              couldn't be happier about that choice!
+              <i className="fas fa-baby" /> Full-Stack Mom
             </p>
+            {/* <p>
+              <i className="fas fa-laptop-code" /> A freelancer turned full-time
+              engineer.
+            </p> */}
+            {/* <p>
+              <i className="fas fa-running" /> Runner.
+            </p> */}
             <p>
-              <i className="fas fa-running" /> I run whenever I can and
-              participate in half marathons and whatnot. It keeps me sane and
-              hopefully healthy.
-            </p>
-            <p>
-              <i className="fas fa-bolt" /> I am a pretty big Tampa Bay
-              Lightning fan (a client of mine during said advertising career)
-              and it's time for playoffs so please be nice if I look stressed!
-              #GoBolts
+              <i className="fas fa-bolt" /> Former Advertising Account Executive
+              Tampa Bay Lightning
             </p>
           </BioText>
         </BioRow>

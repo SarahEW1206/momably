@@ -55,8 +55,8 @@ const Top = styled.div`
     left: 20%;
     color: white;
     font-size: 3rem;
-    line-height: 2.4rem;
-    width: 300px;
+    line-height: 3rem;
+    width: 400px;
     animation-delay: 10s;
     animation: ${dropIn} 3s ease-in-out forwards;
     text-shadow: 1px 1px 5px black;
@@ -64,7 +64,10 @@ const Top = styled.div`
 
   @media (max-width: 500px) {
     h1 {
-      left: 20px;
+      left: 60px;
+      font-size: 2rem;
+      line-height: 2rem;
+      width: 300px;
     }
   }
 `;
@@ -243,19 +246,19 @@ class Home extends Component {
     return (
       <AboutContainer>
         <Top>
-          <h1>Moms know how hard other moms work.</h1>
+          <h1>The marketplace for mom entrepreneurs.</h1>
         </Top>
         <WhySection>
           {/* <StyledHeadingTwo content="A rising tide lifts all boats." /> */}
           <WhyDescription>
             <p>
               <span style={{ fontSize: "24px" }}>
-                Momably is a marketplace where moms can support one another in
-                their business ventures. As a mom with your own business, you
-                know that every client, every dollar, every minute matters.
-                Here, you can find clients who GET that, and buy from others who
-                LIVE that. Imagine what we can all accomplish with this kind of
-                mutual support!
+                Momably is a marketplace where moms who are entrepreneurs of all
+                kinds can do business with one another. As a mom running a
+                business, you know that every client, every dollar, every minute
+                matters. Here, you can find clients who GET that, and buy from
+                others who LIVE that. Imagine what we can all accomplish with
+                this kind of mutual support!
               </span>
             </p>
             <p>
@@ -322,13 +325,13 @@ class Home extends Component {
                 Sarah Waldie
               </Link>
               , a freelance web developer who shifted careers and began learning
-              to code in 2016 while pregnant with my son. As a freelancer, I
-              found that I was most passionate about opportunities to provide
-              services to other moms. I appreciated their support and always
-              sought to pay it forward by hiring moms whenever possible. In
-              Momably, I want to create a community that makes it easy for moms
-              (and others!) to hire moms and support this powerful and motivated
-              group of businesspeople.
+              to code in 2016 while pregnant with her son. As a freelancer,
+              Sarah found that her favorite clients were mom entrepreneurs
+              because they are motivated, organized, communicative and
+              supportive. All those qualities we develop as moms really do make
+              us better businesspeople! In Momably, Sarah hopes to create a
+              community that makes it easy for moms to engage one another in
+              business and help each other succeed.
             </p>
           </StoryBox>
         </BottomRow>
