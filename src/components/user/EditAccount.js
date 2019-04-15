@@ -50,23 +50,23 @@ class EditAccount extends Component {
 
   //To input current as value and make it editable.
   componentDidUpdate() {
-    const { user } = this.props;
+    const { info } = this.props;
     //the if statement needs to be there to make sure you don't keep updating state, you'll get errors otherwise. That should let it run only the once, and once the user is loaded.
     if (
-      user &&
+      info &&
       //The Object.keys() method returns an array of a given object's own property names, in the same order as we get with a normal loop.
       //The every() method tests whether all elements in the array pass the test implemented by the provided function.
 
       Object.keys(this.state).every(index => this.state[index].length === 0)
     ) {
-      this.setState(state => ({ ...user }));
+      this.setState(state => ({ ...info }));
     }
   }
 
   onSubmit = e => {
     e.preventDefault();
 
-    const { user, firestore, history } = this.props;
+    const { info, firestore, history } = this.props;
     const {
       bizDesc,
       bizName,
@@ -82,30 +82,30 @@ class EditAccount extends Component {
 
     let userEdits = {
       //If something is put in the input field, added to the userEdits object. Otherwise the value is not changed from what is in Firestore (aka user.whatever).
-      firstName: firstName === "" ? user.firstName : firstName,
-      lastName: lastName === "" ? user.lastName : lastName,
-      bizName: bizName === "" ? user.bizName : bizName,
-      category: category === "" ? user.category : category,
-      bizDesc: bizDesc === "" ? user.bizDesc : bizDesc,
-      extURL: extURL === "" ? user.extURL : extURL,
-      imgURL: imgURL === "" ? user.imgURL : imgURL,
-      phone: phone === "" ? user.phone : phone,
-      email: email === "" ? user.email : email,
-      password: password === "" ? user.password : password
+      firstName: firstName === "" ? info.firstName : firstName,
+      lastName: lastName === "" ? info.lastName : lastName,
+      bizName: bizName === "" ? info.bizName : bizName,
+      category: category === "" ? info.category : category,
+      bizDesc: bizDesc === "" ? info.bizDesc : bizDesc,
+      extURL: extURL === "" ? info.extURL : extURL,
+      imgURL: imgURL === "" ? info.imgURL : imgURL,
+      phone: phone === "" ? info.phone : phone,
+      email: email === "" ? info.email : email,
+      password: password === "" ? info.password : password
     };
 
     //Update the info in Firestore
     firestore
-      .update({ collection: "users", doc: user.id }, userEdits)
+      .update({ collection: "users", doc: info.id }, userEdits)
       .then(() => history.push("/marketplace"));
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
-    const { user } = this.props;
+    const { info } = this.props;
 
-    if (user) {
+    if (info) {
       return (
         <FullWidth>
           <PatternedHeader />
@@ -121,7 +121,7 @@ class EditAccount extends Component {
                   type="text"
                   className="form-control"
                   name="firstName"
-                  placeholder={user.firstName}
+                  placeholder={info.firstName}
                   value={this.state.firstName}
                   onChange={this.onChange}
                 />
@@ -133,7 +133,7 @@ class EditAccount extends Component {
                   type="text"
                   className="form-control"
                   name="lastName"
-                  placeholder={user.lastName}
+                  placeholder={info.lastName}
                   value={this.state.lastName}
                   onChange={this.onChange}
                 />
@@ -144,7 +144,7 @@ class EditAccount extends Component {
                   type="text"
                   className="form-control"
                   name="bizName"
-                  placeholder={user.bizName}
+                  placeholder={info.bizName}
                   value={this.state.bizName}
                   onChange={this.onChange}
                 />
@@ -182,13 +182,10 @@ class EditAccount extends Component {
                   type="text"
                   className="form-control"
                   name="category"
-                  placeholder={user.category}
+                  selected={info.category}
                   value={this.state.category}
                   onChange={this.onChange}
                 >
-                  {/* <option value="" selected disabled hidden>
-                    Select a category
-                  </option> */}
                   <option value="Art & Photography">Art & Photography</option>
                   <option value="Clothing & Accessories">
                     Clothing & Accessories
@@ -213,7 +210,7 @@ class EditAccount extends Component {
                   type="text"
                   className="form-control"
                   name="bizDesc"
-                  placeholder={user.bizDesc}
+                  placeholder={info.bizDesc}
                   value={this.state.bizDesc}
                   onChange={this.onChange}
                 />
@@ -225,7 +222,7 @@ class EditAccount extends Component {
                   type="url"
                   className="form-control"
                   name="extURL"
-                  placeholder={user.extURL}
+                  placeholder={info.extURL}
                   value={this.state.extURL}
                   onChange={this.onChange}
                 />
@@ -238,7 +235,7 @@ class EditAccount extends Component {
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   className="form-control"
                   name="phone"
-                  placeholder={user.phone}
+                  placeholder={info.phone}
                   value={this.state.phone}
                   onChange={this.onChange}
                 />
@@ -292,7 +289,7 @@ EditAccount.propTypes = {
 export default compose(
   firestoreConnect(props => [
     //we already have "users" from users.js, and we only need one here, so we will get the user id from URL and store the respective user data as "user"
-    { collection: "users", storeAs: "user", doc: props.match.params.id }
+    { collection: "users", storeAs: "info", doc: props.match.params.id }
   ]),
 
   //Below we are replacing the "state" param with destructuring of state.firestore.ordered, which if broken out would look like this:
@@ -301,6 +298,6 @@ export default compose(
   // { ordered } = firestore
   // So when you use the "ordered" variable, it reflects state.firestore.ordered
   connect(({ firestore: { ordered } }, props) => ({
-    user: ordered.user && ordered.user[0]
+    info: ordered.info && ordered.info[0]
   }))
 )(EditAccount);
